@@ -11,12 +11,13 @@
     box-sizing: border-box;
 
     display: inline-block;
+    cursor: pointer;
+
     font-size: 0.875rem; /* 14px / 16px */
     font-weight: 600;
     line-height: 1.5; 
     letter-spacing: 0.1rem;
     text-transform: uppercase;
-    cursor: pointer;
 
     /* Transitions. */
     opacity: 0.8;
@@ -39,9 +40,11 @@
 .btn--raised {
     color: var(--black);
     background-color: var(--primary);
+
     padding-inline: 20px;
     padding-block: 10px;
     padding-right: 50px; /* Make space for arrow. */
+
     background-image: var(--right-arrow-img-path);
     background-repeat: no-repeat;
     background-position: right 20px center;
@@ -53,10 +56,13 @@
 }
 
 .btn--line::after {
-    height: 4px;
-    width: 100%;
-    border: var(--primary) solid 1px;
     content: "";
+
     box-sizing: border-box;
     display: inline-block;
+
+    height: 4px;
+    width: 100%;
+    
+    border: var(--primary) solid 1px;
 }

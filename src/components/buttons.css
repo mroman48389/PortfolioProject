@@ -1,0 +1,32 @@
+/*  
+    Button class that can be used for buttons and anchors. 
+
+    display: Inline-block allows changing of horizontal paddings for anchors; already the default for buttons.
+
+*/
+.btn {
+    /* Reset button styles. */
+    all: unset;
+    outline: revert;
+    box-sizing: border-box;
+
+    display: inline-block;
+    font-size: 0.875rem; /* 14px / 16px */
+    font-weight: 600;
+    line-height: 1.5; 
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    /* Transitions. */
+    opacity: 0.8;
+    transition: translate 200ms, opacity 200ms;
+}
+
+.btn:hover {
+    opacity: 1;
+}
+
+.btn:active {
+    translate: 1px 1px;
+}

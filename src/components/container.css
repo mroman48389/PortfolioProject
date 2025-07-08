@@ -1,11 +1,11 @@
 /* 
-   Container: Limit max width of text. Make it more readable. Help align content. 
+    Container: Limit max width of text. Make it more readable. Help align content. 
 
-   max-width: Max horizontal space container will take up. 960 for legacy reasons.
+    max-width: Max horizontal space container will take up. 960 for legacy reasons.
 
-   padding-inline: Space between content of container and border. Esp needed on mobile so text doesn't hit edges of screen. Sets left and right padding or top and bottom in vertical writing mode.
+    padding-inline: Space between content of container and border. Esp needed on mobile so text doesn't hit edges of screen. Sets left and right padding or top and bottom in vertical writing mode.
    
-   margin-inline: Space outside container. Centers container horizontally. Sets left and right margin or top and bottom in vertical writing mode.
+    margin-inline: Space outside container. Centers container horizontally. Sets left and right margin or top and bottom in vertical writing mode.
 */
 
 .container {

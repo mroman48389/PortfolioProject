@@ -1,19 +1,20 @@
-/* Hide text that we may add to elements for screen-readers (sr) so as not to break accessibility. 
-   Ex: "Back" on a back arrow button that we don't explicitly want to see the word "Back" on:
+/* 
+    Hide text that we may add to elements for screen-readers (sr) so as not to break accessibility. 
+    Ex: "Back" on a back arrow button that we don't explicitly want to see the word "Back" on:
 
-    <a href="/" class="back">
-        <span class="sr-only">back</span>
-    </a>
+        <a href="/" class="back">
+            <span class="sr-only">back</span>
+        </a>
    
-   position: Absolute removes elements with these classes from the document flow.
-   width, height: 1 minimizes the size. Can't be zero or screen reader may ignore it or not focus on it. Minimal size
-      makes for a minimal footprint.
-   padding: Remove spacing.
-   overflow: Hidden hides any content overflow.
-   margin: Push it offscreen.
-   clip: Hides the element.
-   white-space: Nowrap prevents line breaks.
-   border: 0 removes visual borders.
+    position: Absolute removes elements with these classes from the document flow.
+    width, height: 1 minimizes the size. Can't be zero or screen reader may ignore it or not focus on it. Minimal size
+        makes for a minimal footprint.
+    padding: Remove spacing.
+    overflow: Hidden hides any content overflow.
+    margin: Push it offscreen.
+    clip: Hides the element.
+    white-space: Nowrap prevents line breaks.
+    border: 0 removes visual borders.
 */
 .sr-only,
 .sr-only-focusable:not(:focus):not(:focus-within) {

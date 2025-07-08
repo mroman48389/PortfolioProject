@@ -10,3 +10,10 @@ body {
 input, textarea, button, select {
     font: inherit;
 }
+
+:root {
+    --primary: #f2d544;
+    --black: #232020;
+    --text-color: white;
+    --gray: #999999;
+}

@@ -41,8 +41,22 @@
     background-color: var(--primary);
     padding-inline: 20px;
     padding-block: 10px;
+    padding-right: 50px; /* Make space for arrow. */
+    background-image: var(--right-arrow-img-path);
+    background-repeat: no-repeat;
+    background-position: right 20px center;
 }
 
 .btn--line {
+    color: var(--text-color);
+    padding: 10px;
+}
 
+.btn--line::after {
+    height: 4px;
+    width: 100%;
+    border: var(--primary) solid 1px;
+    content: "";
+    box-sizing: border-box;
+    display: inline-block;
 }

@@ -1,5 +1,5 @@
 /*  
-    Button class that can be used for buttons and anchors. 
+    Button class that can be used for buttons and button-esque anchors. 
 
     display: Inline-block allows changing of horizontal paddings for anchors; already the default for buttons.
 
@@ -29,4 +29,20 @@
 
 .btn:active {
     translate: 1px 1px;
+}
+
+.btn--nav {
+    color: var(--text-color);
+    padding: 10px;
+}
+
+.btn--raised {
+    color: var(--black);
+    background-color: var(--primary);
+    padding-inline: 20px;
+    padding-block: 10px;
+}
+
+.btn--line {
+
 }

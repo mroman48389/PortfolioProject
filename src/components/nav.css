@@ -1,0 +1,22 @@
+/* Entire nav consists of a logo we want on the left and an unordered list of nav anchors we want as 
+   aligned on the right as a group. */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    padding: 20px;
+}
+
+/* This styles just the list part of the nav. */
+.nav-list {
+    display: flex;
+    list-style-type: none;
+    gap: 10px;
+}
+
+/* On smaller devices, hide all links except "Hire me". */
+@media(max-width: 48.5rem) {
+    .nav-list li:not(:last-child) {
+        display: none;
+    }
+}

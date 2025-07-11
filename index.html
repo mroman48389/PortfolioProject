@@ -2,58 +2,87 @@
 
 <html lang="en">
 
-<head>
+    <head>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
 
-    <link rel="stylesheet" href="./src/style.css">
+        <link rel="stylesheet" href="./src/style.css">
 
-</head>
+        <!-- Add selected Poppins fonts from fonts.google.com. -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-<body>
+        <!-- Vite only bundles assets from src that are explicitly imported or referenced; favicon added to public (no bundling required). -->
+        <link rel="icon" type="image/png" href="./MR-favicon16.png">
 
-    <main>
+        <!-- Support dark and light modes with preference for dark. Processing here will prevent sudden change in background color. -->    
+        <meta name="color-scheme" content="dark light">
 
-        <div class="container">
+        <script type="module" src="./src/main.js"></script>
 
-	        <h1>Heading</h1>
+    </head>
 
-            <p>Paragraph</p>
+    <body>
 
-            <div>
-                <button class="btn btn--raised">Hire me</button>
+		<nav>
+            <div class="container">
+                <div class="nav">
+
+                    <div>
+                        <img src="./src/assets/MR-logo-512.png" width="50" height="50" alt=""/>
+                    </div>
+        
+                    <ul class="nav-list">
+                        <li><a href="#about-me" class="btn btn--nav">About me</a></li>
+                        <li><a href="#portfolio" class="btn btn--nav">Portfolio</a></li>
+                        <li><a href="#experience" class="btn btn--nav">Experience</a></li>
+                        <li><a href="#testimonials" class="btn btn--nav">Testimonials</a></li>
+                        <li><a href="#hire-me" class="btn btn--nav btn--raised">Hire me</a></li>
+                    </ul>
+
+                </div>  
             </div>
+		</nav>
 
-            <div>
-                <a class="btn btn--nav" href="">About me</a>
-            </div>
+        <main>
+            <div class="container">
+                <h1>Heading</h1>
 
-            <div>
-                <a class="btn btn--line" href="">Visit</a>
-            </div>
-
-            <form>
+                <p>Paragraph</p>
 
                 <div>
-                    <label>Your name:
-                        <input type="text" class="input" placeholder="Your name">
-                    </label>
+                    <button class="btn btn--raised">Hire me</button>
                 </div>
 
                 <div>
-                    <label>Your message:
-                        <textarea class="input" placeholder="Your message"></textarea>
-                    </label>
+                    <a class="btn btn--nav" href="">About me</a>
                 </div>
-                
-            </form>
 
-        </div>
+                <div>
+                    <a class="btn btn--line" href="">Visit</a>
+                </div>
 
-    </main>
+                <form>
+                    <div>
+                        <label>Your name:
+                            <input type="text" class="input" placeholder="Your name">
+                        </label>
+                    </div>
 
-</body>
+                    <div>
+                        <label>Your message:
+                            <textarea class="input" placeholder="Your message"></textarea>
+                        </label>
+                    </div>
+                    
+                    <h2 id="hire-me"> Hire me</h2>
+                </form>
+            </div>
+        </main>
+
+    </body>
 
 </html>

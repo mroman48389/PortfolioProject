@@ -27,6 +27,15 @@
     }
 } */
 
+/* If light-theme was added via the JavaScript in main.js, switch to light mode colors. */
+:root.light-theme {
+    --text-color: var(--black);
+    --light-icon: var(--black);
+    --gray-light: var(--gray-dark);
+    --dark-icon: white;
+    --anchor-color: var(--black);
+}
+
 * {
     box-sizing: border-box;
 }
@@ -45,6 +54,11 @@ html {
 html::selection {
     color: var(--black);
     background-color: var(--primary);
+}
+
+/* If light-theme was added via the JavaScript in main.js, switch to light mode color. */
+html.light-theme {
+    background-color: var(--beige);
 }
 
 /* If the user has no motion preferences, make the scrolling smooth. */

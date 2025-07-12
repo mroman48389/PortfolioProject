@@ -1,0 +1,20 @@
+#toggle-theme {
+    /* Remove default button styles first. */
+    all: unset;
+    outline: revert;
+    box-sizing: border-box;
+
+    /* Fix button to upper right corner of screen. */
+    position: fixed;
+    right: 10px;
+    top: 10px;
+
+    z-index: 1;
+
+    transition: translate 300ms;
+}
+
+/* Makes the button look like it's being clicked by moving it very slightly on click. */
+#toggle-theme:active {
+     translate: 1px 1px;   
+}

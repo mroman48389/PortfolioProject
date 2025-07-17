@@ -14,18 +14,24 @@
     --dark-icon: var(--black);
     --anchor-color: var(--primary);
 
-    --gap: clamp(30px, 10vw, 80px); /*80px;*/
+    /* I'd rather have the media queries together to address small device issues in the same place. */
+    /*--gap: clamp(30px, 10vw, 80px); */ 
+    --gap: 80px;
 	
 	--right-arrow-img-path: url('/src/assets/arrow-right.svg');
     --logo-img-path: url('/src/assets/MR-logo-512.png');
 }
 
-/* Prefer the succinctness of clamp. */
-/* @media (max-width: 37.5rem) {
+@media (max-width: 37.5rem) {
+    /* Reduce the gap on smaller devices. */
     :root {
         --gap: 30px;
     }
-} */
+    /* Ensure smallest font size is sill legible on smaller devices. */
+    html {
+        font-size: 70%;
+    }
+}
 
 /* If light-theme was added via the JavaScript in main.js, switch to light mode colors. */
 :root.light-theme {

@@ -1,0 +1,19 @@
+/* "Intro" section must be relative to use absolute positioning on arrow button at the bottom of it. */
+#intro {
+    position: relative;
+}
+
+#intro-h1 {
+    margin-bottom: 0;
+}
+
+#intro-h2 {
+    margin-top: 0;
+    margin-bottom: 40px;
+    /* In case a word gets cut off on small devices. */
+    /* overflow-wrap: break-word; */
+}
+
+#intro p {
+    margin-block: 0;
+}

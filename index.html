@@ -45,7 +45,7 @@
 
                 </div>  
             </div>
-            
+
             <button id="toggle-theme" aria-label="Toggle dark theme">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -65,9 +65,57 @@
 
         <main>
             <div class="container">
-                <h1>Heading</h1>
+                <section id="intro" class="layout-section" aria-describedby="intro-h1 intro-h2">
+                    <h1 id="intro-h1" class="title--lg">Mark Roman</h1>
+                    <h2 id="intro-h2" class="title--lg">Software Engineer</h2>
+                    <p class="text--xl">Mark is a software engineer based in Cheshire, CT.</p>
+                    <p class="text--xl">He has been developing software professionally for over 16 years.</p>
 
-                <p>Paragraph</p>
+                    <button id="scroll-down" aria-labelledby="about-me-h2">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            height="48px"
+                            viewBox="0 0 24 24"
+                            width="48px">
+                            <path d="M0 0h24v24H0V0z" fill="none" />
+                            <path d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z" stroke="var(--light-icon)" />
+                        </svg>
+                    </button>
+                </section>
+
+                <section id="about-me" class="layout-section" aria-labelledby="about-me-h2">
+                    <h2 id="about-me-h2" class="title--sm">About me</h1>
+
+                    <div class="layout-grid-half">
+                        <div class="about-me-col-1">
+                            <p class="text--lg">
+                                Mark studied mathematics and computer science at Western New England University. 
+                                He learned object-oriented design in Java, his foundational programming language. 
+                            </p>
+        
+                            <p class="text--lg">
+                                Mark's professional career began at Avenir Health where he developed desktop applications using 
+                                Object Pascal and Delphi. In the later half of his career, the company moved on to websites and web applications. 
+                                Mark started developing web apps in React with JavaScript and Material UI. After several years of frontend work, 
+                                he moved on to the backend  to develop the Integrated Health Tool engine in Python. 
+                            </p>
+        
+                        </div>
+
+                        <div class="about-me-col-2">
+                            <p class="text--lg">
+                                Mark enjoys working across stacks and continuous learning to build quality software that has a positive
+                                impact on people's lives. 
+                            </p>
+
+                            <p class="text--lg">
+                                Curious to know more? Check-out my
+                                <a href="#portfolio">portfolio</a> or
+                                <a href="#hire-me">hire me</a>
+                            </p>
+                        </div>
+                    </div>
+
+                </section>
 
                 <div>
                     <button class="btn btn--raised">Hire me</button>

@@ -1,3 +1,11 @@
+
+/* Mimic the behavor of clicking on the "Hire me" anchor. This will get attached to a button. */
+document.querySelector("#scroll-down").addEventListener("click", () => {
+    window.scrollTo({
+        top: document.querySelector("#about-me").offsetTop - 20,
+    });
+});
+
 /* If the user clicks the element with id toggle-theme, add the light-theme class to html elements. 
 
    Note that document.documentElement is equivalent to document.querySelector("html"), so we

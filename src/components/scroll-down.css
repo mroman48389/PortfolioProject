@@ -1,0 +1,42 @@
+/* For down arrow button the will bring the user to the "About" section. */
+#scroll-down {
+    /* Reset button styles. */
+    all: unset; 
+    outline: revert; 
+    box-sizing: border-box;
+
+    /* Position arrow button absolutely within the "Intro" section at the bottom. */
+    position: absolute;
+    left: calc(50% - (48px / 2));
+    bottom: 25px;
+
+    cursor: pointer;
+
+    fill: var(--dark-icon);
+
+    transition: translate 300ms fill 200ms;
+    animation: bounce 1.6s infinite cubic-bezier(0.445, 0.05, 0.55, 0.95); /* EaseInOutSine from https://easings.net/ */
+}
+
+/* Makes the button look like it's being clicked by moving it very slightly on click. */
+#scroll-down:active {
+     translate: 1px 1px;   
+}
+
+#scroll-down:hover {
+    fill: var(--light-icon);
+}
+
+@keyframes bounce {
+    0% {
+        translate: 0px 0px;
+    }
+    
+    50% {
+        translate: 0px -15px;
+    }
+
+    100% {
+        translate: 0px 0px;
+    }
+}

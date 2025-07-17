@@ -1,0 +1,27 @@
+.layout-section {
+    padding-bottom: 200px;
+}
+
+
+.layout-section-title {
+	margin-bottom: 36px;
+}
+
+/* "About me" section will have two equally-sized columns with a gap in between. */
+.layout-grid-half {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: var(--gap);
+}
+
+@media (max-width: 37.5rem) {
+    /* Less padding looks better on smaller devices. */
+	.layout-section {
+		padding-bottom: 100px;
+	}
+
+    /* On smaller devices, "About me" section will change to a single column. */
+    .layout-grid-half {
+		grid-template-columns: 1fr;
+	}
+}

@@ -1,0 +1,33 @@
+/* This will hold the project image as one flex item and a div containing the name, description,
+   and project link as a second flex item. */
+.project {
+    display: flex;
+    gap: var(--gap);
+    margin-bottom: 100px;
+    align-items: center;
+}
+
+.project-image {
+    /* Make the image a perfect circle. */
+    border-radius: 50%;
+
+    /* Make the image responsive: 20% of the width of the viewport (and height to keep it square). If it would be smaller than that, make it
+       175px instead, and if it would be larger than that, make it 300px. */
+    width: clamp(175px, 20vw, 300px);
+    height: clamp(175px, 20vw, 300px);
+}
+
+/* Target odd-numbered sibling elements with class .project (e.g., 1st, 3rd).
+   If they contain a child flex item with class .project-image, assign that child 
+   an order of 1 so it appears earlier in the flex layout compared to other siblings. */
+.project:nth-child(odd) .project-image {
+    order: 1;
+}
+
+/* On smaller devices, make the project image always appear first by changing the display back 
+   to block. */
+@media (max-width: 37.5rem) {
+   .project {
+        display: block;
+    } 
+}

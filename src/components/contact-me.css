@@ -1,0 +1,47 @@
+.contact-me-grid {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+
+@media (max-width: 37.5rem) {
+    .contact-me-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.inline-paragraph {
+    display: inline;
+}
+
+.contact-me-text-grid {
+    display: grid;
+    grid-template-columns: 30px 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas: 
+        "icon description"
+        "blank details";
+    place-items: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+#icon {
+    grid-column: 1 / 2;
+}
+
+#description {
+    grid-column: 2 / 3;
+    margin: 0px;
+    width: 100%;
+}
+
+#details {
+    grid-column: 2 / 3;
+    margin: 0px;
+    width: 100%;
+}
+
+.contact-me-submit-button {
+    display: flex;
+    justify-content: flex-end;
+}

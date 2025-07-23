@@ -17,3 +17,12 @@ p {
 strong {
     font-weight: normal;
 }
+
+figure,
+blockquote {
+    margin: 0;
+}
+
+address {
+    font-style: normal;
+}

@@ -21,6 +21,20 @@
         <!-- Support dark and light modes with preference for dark. Processing here will prevent sudden change in background color. -->    
         <meta name="color-scheme" content="dark light">
 
+        <!-- Add schema for searchability. -->
+        <script type="application/ld+json">
+            {
+              "@context": "http://schema.org",
+              "@type": "Person",
+              "skills": ["JavaScript", "React", "HTML", "CSS", "Python", "NumPy", "Delphi", "Object Pascal"],
+              "jobTitle": "Software Engineer",
+              "name": "Mark Roman",
+              "gender": "male",
+              "url": "https://mroman.io",
+              "description": "I'm Mark Roman. I'm a detailed-oriented software engineer driven by learning, helping others, and producing quality work."
+            }
+          </script>
+
         <script type="module" src="./src/main.js"></script>
 
     </head>
@@ -32,15 +46,15 @@
                 <div class="nav">
 
                     <div>
-                        <img src="./src/assets/MR-logo-512.png" width="50" height="50" alt="Mark Roman initials"/>
+                        <img src="./src/assets/MR-logo-512.png" width="50" height="50" alt="Mark Roman logo"/>
                     </div>
         
                     <ul class="nav-list">
                         <li><a href="#about-me" class="btn btn--nav">About me</a></li>
                         <li><a href="#portfolio" class="btn btn--nav">Portfolio</a></li>
                         <li><a href="#experience" class="btn btn--nav">Experience</a></li>
-                        <li><a href="#testimonials" class="btn btn--nav">Testimonials</a></li>
-                        <li><a href="#hire-me" class="btn btn--nav btn--raised">Hire me</a></li>
+                        <!-- <li><a href="#testimonials" class="btn btn--nav">Testimonials</a></li> -->
+                        <li><a href="#contact-me" class="btn btn--nav btn--raised">Contact me</a></li>
                     </ul>
 
                 </div>  
@@ -110,7 +124,7 @@
                             <p class="text--lg">
                                 Curious to know more? Check-out my
                                 <a href="#portfolio">portfolio</a> or
-                                <a href="#hire-me">hire me</a>
+                                <a href="#contact-me">contact me</a>
                             </p>
                         </div>
                     </div>
@@ -145,38 +159,38 @@
                     <h2 id="heading-experience" class="title--sm layout-section-title">Experience</h2>
                     
                     <ul class="tags">
-                        <li class="tag">JavaScript</li>
-                        <li class="tag">React</li>
-                        <li class="tag">HTML</li>
-                        <li class="tag">CSS</li>
-                        <li class="tag">AG Grid</li>
-                        <li class="tag">Material UI</li>
-                        <li class="tag">jQuery</li>
+                        <li class="tag front-end">JavaScript</li>
+                        <li class="tag front-end">React</li>
+                        <li class="tag front-end">HTML</li>
+                        <li class="tag front-end">CSS</li>
+                        <li class="tag front-end">AG Grid</li>
+                        <li class="tag front-end">Material UI</li>
+                        <li class="tag front-end">jQuery</li>
 
-                        <li class="tag">Python</li>
-                        <li class="tag">NumPy</li>
-                        <li class="tag">OpenPyXl</li>
-                        <li class="tag">Excel</li>
+                        <li class="tag back-end">Python</li>
+                        <li class="tag back-end">NumPy</li>
+                        <li class="tag back-end">OpenPyXl</li>
+                        <li class="tag back-end">Excel</li>
 
-                        <li class="tag">Git</li>
-                        <li class="tag">GitHub</li>
-                        <li class="tag">TortoiseGit</li>
-                        <li class="tag">Postman</li>
-                        <li class="tag">Docker Desktop</li>
-                        <li class="tag">Unfuddle</li>
+                        <li class="tag version-control-workflow-tools">Git</li>
+                        <li class="tag version-control-workflow-tools">GitHub</li>
+                        <li class="tag version-control-workflow-tools">TortoiseGit</li>
+                        <li class="tag version-control-workflow-tools">Postman</li>
+                        <li class="tag version-control-workflow-tools">Docker Desktop</li>
+                        <li class="tag version-control-workflow-tools">Unfuddle</li>
 
-                        <li class="tag">Delphi</li>
-                        <li class="tag">Object Pascal</li>
-                        <li class="tag">TMS VCL</li>
-                        <li class="tag">SetupBuilder</li>
+                        <li class="tag desktop">Delphi</li>
+                        <li class="tag desktop">Object Pascal</li>
+                        <li class="tag desktop">TMS VCL</li>
+                        <li class="tag desktop">SetupBuilder</li>
 
-                        <li class="tag">Visual Studio Code</li>
-                        <li class="tag">Webstorm</li>
-                        <li class="tag">Copilot</li>
-                        <li class="tag">JSON</li>
-                        <li class="tag">FileZilla</li>
-                        <li class="tag">VBA</li>
-                        <li class="tag">Java</li>
+                        <li class="tag miscellaneous">Visual Studio Code</li>
+                        <li class="tag miscellaneous">Webstorm</li>
+                        <li class="tag miscellaneous">Copilot</li>
+                        <li class="tag miscellaneous">JSON</li>
+                        <li class="tag miscellaneous">FileZilla</li>
+                        <li class="tag miscellaneous">VBA</li>
+                        <li class="tag miscellaneous">Java</li>
                     </ul>
                 </section>
 
@@ -223,37 +237,43 @@
                     
                 </section>
 
-
-
-                <div>
-                    <button class="btn btn--raised">Hire me</button>
-                </div>
-
-                <div>
-                    <a class="btn btn--nav" href="">About me</a>
-                </div>
-
-                <div>
-                    <a class="btn btn--line" href="">Visit</a>
-                </div>
-
-                <form>
-                    <div>
-                        <label>Your name:
-                            <input type="text" class="input" placeholder="Your name">
-                        </label>
-                    </div>
-
-                    <div>
-                        <label>Your message:
-                            <textarea class="input" placeholder="Your message"></textarea>
-                        </label>
-                    </div>
-                    
-                    <h2 id="hire-me"> Hire me</h2>
-                </form>
             </div>
         </main>
+
+        <footer>
+            <div class="container">
+                <div class="footer-whole">
+    
+                    <div class="footer-logo-plus-copyright">
+                        <img src="./src/assets/MR-logo-512.png" width="50" height="50" alt="Mark Roman logo"/>
+                        
+                        <div>
+                            <p class="text--bold footer-copyright-paragraph">&copy; 2025 Mark Roman</p>
+                            <p class="footer-copyright-paragraph"><small class="text--sm">All rights reserved.</small></p>
+                        </div>
+                    </div>
+    
+                    <div class="footer-social">
+                        <p class="text--sm footer-view-me"><a href="https://www.linkedin.com/in/mark-roman-b0a2b7355" target="_blank">View me on LinkedIn</a></p>
+                        
+                        <ul class="footer-icons">
+                            <!-- <li>
+                                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M16 0C7.16344 0 0 7.16344 0 16C0 24.8366 7.16344 32 16 32C24.8366 32 32 24.8366 32 16C32 7.16344 24.8366 0 16 0ZM15.5544 13.5582L15.5208 13.0046C15.4201 11.5697 16.3042 10.259 17.7032 9.75059C18.218 9.56981 19.0909 9.54721 19.6617 9.70539C19.8856 9.77318 20.3108 9.99916 20.613 10.2025L21.1614 10.5754L21.7658 10.3833C22.1015 10.2816 22.5492 10.1121 22.7506 9.99916C22.9409 9.89747 23.1088 9.84097 23.1088 9.87487C23.1088 10.0669 22.6947 10.7223 22.3477 11.0838C21.8777 11.5923 22.012 11.6375 22.9633 11.2985C23.534 11.1064 23.5452 11.1064 23.4333 11.3211C23.3662 11.4341 23.0192 11.8295 22.6499 12.1911C22.0232 12.8125 21.9896 12.8803 21.9896 13.4001C21.9896 14.2023 21.6091 15.8745 21.2286 16.7897C20.5235 18.5071 19.0126 20.281 17.5017 21.1736C15.3753 22.4277 12.5438 22.7441 10.16 22.0097C9.36538 21.7611 8 21.1284 8 21.0154C8 20.9815 8.41409 20.9363 8.91772 20.925C9.96973 20.9024 11.0218 20.6086 11.9171 20.0889L12.5214 19.7273L11.8276 19.4901C10.8427 19.1511 9.95854 18.3715 9.73471 17.6371C9.66756 17.3998 9.68994 17.3885 10.3167 17.3885L10.9658 17.3772L10.4174 17.1173C9.76828 16.7897 9.17513 16.236 8.88414 15.6711C8.6715 15.2643 8.4029 14.2362 8.48124 14.1571C8.50362 14.1232 8.73865 14.191 9.00725 14.2814C9.77948 14.5638 9.8802 14.496 9.43253 14.0215C8.59316 13.1628 8.33575 11.886 8.73865 10.6771L8.92891 10.1347L9.66756 10.8692C11.1784 12.3493 12.9579 13.2306 14.9948 13.4905L15.5544 13.5582Z"
+                                    fill="var(--light-icon)" />
+                                </svg>
+                            </li> -->
+                            <li>
+                                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M16 0C7.16344 0 0 7.16344 0 16C0 24.8366 7.16344 32 16 32C24.8366 32 32 24.8366 32 16C32 7.16344 24.8366 0 16 0ZM7.68101 13.252H11.307V24.1464H7.68101V13.252ZM11.5479 9.8818C11.5244 8.8136 10.7605 8 9.5201 8C8.27969 8 7.46875 8.8136 7.46875 9.8818C7.46875 10.9279 8.25572 11.7649 9.47304 11.7649H9.49621C10.7605 11.7649 11.5479 10.9279 11.5479 9.8818ZM20.2088 12.9961C22.5948 12.9961 24.3836 14.5535 24.3836 17.8998L24.3834 24.1464H20.7576V18.3178C20.7576 16.8538 20.2329 15.8548 18.9203 15.8548C17.9186 15.8548 17.3219 16.5283 17.0599 17.1788C16.964 17.4119 16.9404 17.7367 16.9404 18.0623V24.1467H13.3141C13.3141 24.1467 13.3619 14.2745 13.3141 13.2522H16.9404V14.7953C17.4217 14.0535 18.2836 12.9961 20.2088 12.9961Z" fill="var(--light-icon)" />
+                                </svg>
+                            </li>
+                        </ul>
+    
+                    </div>
+                </div>
+            </div>
+        </footer>
 
     </body>
 

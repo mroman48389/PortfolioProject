@@ -16,6 +16,26 @@
     border: 3px solid var(--primary);
 }
 
+.front-end {
+    color: var(--kelly-green);
+}
+
+.back-end {
+    color: var(--teal);
+}
+
+.version-control-workflow-tools {
+    color: var(--brown-yellow);
+}
+
+.desktop {
+    color: var(--milano-red);
+}
+
+.miscellaneous {
+    color: var(--vibrant-purple);
+}
+
 /* Here is learnhtmlcss.online's solution.  Not sure why it's so complicated
 
 .tags {

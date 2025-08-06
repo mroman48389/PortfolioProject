@@ -1,10 +1,13 @@
+/**************************************   Scroll anchors   *****************************************/
 
-/* Mimic the behavor of clicking on the "Hire me" anchor. This will get attached to a button. */
+/* Mimic the behavor of clicking on the "About me" anchor. This will get attached to a button. */
 document.querySelector("#scroll-down").addEventListener("click", () => {
     window.scrollTo({
         top: document.querySelector("#about-me").offsetTop - 20,
     });
 });
+
+/*****************************    Light/dark mode   *********************************************/
 
 /* If the user clicks the element with id toggle-theme, add the light-theme class to html elements. 
 

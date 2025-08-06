@@ -1,74 +1,342 @@
+/********************************   Experience tags   ****************************************/
+
+/* Flex container for tags. */
 .tags {
     display: flex;
-    gap: 10px;
-    list-style-type: none;
     flex-wrap: wrap;
+    gap: 10px;
+
     padding-left: 0px;
+
+    list-style-type: none;
+}
+ 
+/* tag-container will span over entire tag, giving us a stable hover detection area. */
+.tag-container {
+    --rectangle-shape: polygon(
+        0 0,       /* top left */
+        100% 0,    /* top right */
+        100% 100%, /* bottom right */
+        0 100%     /* bottom left */
+    );   
+
+    --arrow-shape: polygon(
+        0 20%,    /* top-left */
+        75% 20%,  /* to the right */
+        75% 0,    /* straight up */
+        100% 50%, /* diagonally down and to the right (arrow tip) */
+        75% 100%, /* diagonally down and to the left */
+        75% 80%,  /* straight up */
+        0 80%     /* to the left */
+    );   
+
+    /* Creates border effect. Before hover, it will create a 3px colored border on the rectangle. After hover, it will create a
+       colored border around the arrow. Because of the angles on the arrow and the way clip path generates, the border won't look
+       even all the way around the arrow.  We'll make that less obvious using a filter.
+       
+       Example: if the tag is "front-end", we set the background-color to green.  Setting the padding of the tag container pushes 
+       just enough of it away from the inside border to reveal that green. */
+    padding: 3px;
+
+    /* Needed so we can absolutely position children div with the tag shape, which we will stretch over the container. Also needed to
+       absolutely position the children div with the pop up info about the experience. */
+    position: relative;
+
+    cursor: pointer;
+
+    /* Add a slight shadow to the shape to make up for the fact that the border does not appear to be the same thickness when the
+       shape is an arrow. It will also show on the experience div for a unified theme. */
+    filter: drop-shadow(0 0 3px var(--experience-type-color)); 
+} 
+
+/* tag-shape will focus on the shape of the tag. */
+.tag-shape {
+    /* Absolutely position the shape to stretch over the entire container. */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    /* Start as rectangle. */
+    clip-path: var(--rectangle-shape);
+
+    /* Smoothly transition tag to arrow shape using clip-path. */
+    transition: clip-path 0.4s ease-out;
+    
+    /* Apply background color based on experience type. We will put white over this and then use padding and filter to reveal the
+       experience color. */
+    background-color: var(--experience-type-color);
+}
+  
+/* tag-contents will focus on the content (terms) inside the tag. */
+.tag-contents {
+    color: var(--experience-type-color);
+    /* Makes text pop and place white on top of background color so the background color only shows where padding is. */
+    background-color: white; 
+
+    padding: 10px 20px;
+
+    transition: clip-path 0.4s ease-out, transform 0.4s ease-out;
+    transform: scale(1);
 }
 
-.tag {
-    border: 3px double var(--gray);
-    padding: 10px;
+/**************************   Experience info cards   ******************************/
+
+/* Container for the experience div that pops up on the tag hover. */
+.experience-info-container {
+    /* Needed to position experience div to the right of its tag shape div sibling */
+    position: absolute; 
+
+    /* This places the experience div halfway down the height of the tag's container (which coincides with the arrow tip). */
+    top: 50%; 
+
+    /* Move the experience div vertically upward by 50% of its height. We'll also transition the scale to match the scaling on the
+       tag itself and give the experience section more life. */
+    transform: translateY(-50%) scale(1);
+
+    /* Place it to the right of the tag. The tag takes up 100% of its container width, so placing the experience div
+       15% further than 100% at the left gives a little gap between the tag and experience div. */
+    left: 115%; 
+
+    width: 280px;
+    min-height: 200px;
+
+    background-color: white;
+
+    /* Make the experience div invisible unless the user hovers. */
+    opacity: 0;
+
+    /* Ignore mouse interactions. If we don't do this, the tags and experience divs will interfere with each other on hover. */
+    pointer-events: none;
+
+    transition: transform 0.4s ease-out;
+    
+    border-radius: 10px;
+
+    /* No scroll bars; user cannot interact with this pop-up element. */
+    overflow: hidden;
 }
 
-.tag:hover {
-    color: var(--primary);
-    border: 3px solid var(--primary);
+/* Header section with colored background */
+.experience-type-header {
+    /* We're going to add a small decoration to the header with absolute positioning, so we need it to be relative. */
+    position: relative;
+
+    padding: 15px;
+    text-align: center;
+
+    /* Give the experience header a little flair by applying a subtle gradient. Put the gradient on a diagonal (at 135 degrees) from 
+       left to right. The starting color will be the experience type color and the ending color will be 80% the experience type color
+       and 20% black.  */
+    background: linear-gradient(135deg, var(--experience-type-color), color-mix(in srgb, var(--experience-type-color) 80%, black));
+    color: white;
 }
 
+/* Decorate the experience header with a small gray line to add a touch of dimension. */
+.experience-type-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    /* Start the line in the center of the header. */
+    left: 50%; 
+    /* Move the line 50% of its width to the left so its centered. */
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+
+    background: rgba(255,255,255,0.5);
+
+    border-radius: 2px;
+}
+
+.experience-content {
+    padding: 20px;
+}
+
+/*****************************   On hover   ******************************/
+
+.tag-container:hover {
+    /* Without this, the experience div will show up behind the other tags. */
+    z-index: 2;
+}
+
+.tag-container:hover .tag-shape {
+    /* Tag is a right-arrow shape on hover. */
+    clip-path: var(--arrow-shape);
+}
+
+/* If we're hovering over the tag container, change the contents to match the arrow shape. */
+.tag-container:hover .tag-contents {
+    clip-path: var(--arrow-shape);
+    
+    /* Also slightly increase the size of the tag (smoothly on transition) for nice effect. */
+    transform: scale(1.05);
+}
+
+.tag-container:hover .experience-info-container {
+    /* Make the experience div fully visible when the user hovers over a tag. */
+    opacity: 1; 
+
+    /* Vertically center and slightly increase the size of the div (smoothly on transition) for nice effect. */
+    transform: translateY(-50%) scale(1.05); 
+}
+
+/*****************************   Experience colors   ********************************/
+
+/* Color the tags differently depending on the type of experience (skill/technology).  */
 .front-end {
-    color: var(--kelly-green);
+    --experience-type-color: var(--kelly-green);
 }
 
 .back-end {
-    color: var(--teal);
+    --experience-type-color: var(--teal);
 }
 
 .version-control-workflow-tools {
-    color: var(--brown-yellow);
+    --experience-type-color: var(--brown-yellow);
 }
 
 .desktop {
-    color: var(--milano-red);
+    --experience-type-color: var(--milano-red);
 }
 
 .miscellaneous {
-    color: var(--vibrant-purple);
+    --experience-type-color: var(--vibrant-purple);
 }
 
-/* Here is learnhtmlcss.online's solution.  Not sure why it's so complicated
 
-.tags {
-    padding-left: 0;
+
+
+
+
+
+
+
+
+.experience-type-title {
+    font-size: 1.25em;
+    font-weight: 600;
+    margin: 0;
+    letter-spacing: 0.25px;
+    text-shadow: 
+        0 1px 3px rgba(0,0,0,0.4),
+        0 0 1px rgba(255,255,255,0.3);
 }
 
-.tag {
-    --tag-color: var(--gray);
-    font-size: 1rem;
-    font-weight: normal;
-    line-height: 1.6;
-    letter-spacing: 1px;
-    display: inline-block;
-    border: 1px solid var(--tag-color);
-    padding: 12px 16px;
-    margin: 8px;
-    margin-left: 0;
-    position: relative;
-    outline: 1px solid transparent;
+.skill-level-detail,
+.experience-level-detail {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 12px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    border-left: 4px solid transparent;
+    background-image: 
+        linear-gradient(white, white),
+        linear-gradient(135deg, 
+            var(--experience-type-color) 0%, 
+            color-mix(in srgb, var(--experience-type-color) 70%, white) 100%);
+    background-origin: padding-box, border-box;
+    background-clip: padding-box, border-box;
+    transition: all 0.2s ease;
 }
 
-.tag::before {
-    box-sizing: border-box;
-    content: "";
-    position: absolute;
-    inset: -3px;
-    border: 1px solid var(--tag-color);
+.skill-level-detail:last-child,
+.experience-level-detail:last-child {
+    margin-bottom: 0;
 }
 
-.tag:hover {
-    --tag-color: var(--primary);
-    color: var(--primary);
-    outline-color: var(--primary);
+.skill-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 15px;
+
+    /* Prevent the eye from focusing too much on the icon by making it less dark. */
+    opacity: 0.8; 
+
+    flex-shrink: 0;
 }
 
-.*/
+.skill-text {
+    flex: 1;
+}
+
+.skill-level-label,
+.experience-level-label {
+    font-weight: 600;
+    color: #333;
+    font-size: 0.9em;
+    margin-bottom: 2px;
+}
+
+.skill-level-value,
+.experience-level-value {
+    color: #666;
+    font-size: 0.95em;
+}
+
+/* Progress bar for skill level */
+.progress-container {
+    width: 100%;
+    height: 6px;
+    background: #e9ecef;
+    border-radius: 3px;
+    margin-top: 8px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--experience-type-color), color-mix(in srgb, var(--experience-type-color) 70%, white));
+    border-radius: 3px;
+    transition: width 0.6s ease-out;
+    width: 0;   
+}
+
+.progress-bar.expert {
+    width: 95%;
+}
+
+.progress-bar.advanced {
+    width: 75%;
+}
+
+.progress-bar.intermediate {
+    width: 50%;
+}
+
+.progress-bar.beginner {
+    width: 30%;
+}
+
+/* Hover states */
+.tag-container:hover {
+    z-index: 2;
+}
+
+.tag-container:hover .tag-shape {
+    clip-path: var(--arrow-shape);
+}
+
+.tag-container:hover .tag-contents {
+    clip-path: var(--arrow-shape);
+    transform: scale(1.05);
+}
+
+.tag-container:hover .experience-info-container {
+    opacity: 1; 
+    transform: translateY(-50%) scale(1.05); 
+}
+
+.tag-container:hover .progress-bar {
+    animation: fillProgress 0.8s ease-out 0.3s forwards;
+}
+
+@keyframes fillProgress {
+    from { width: 0; }
+}
+
+

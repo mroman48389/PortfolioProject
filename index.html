@@ -40,6 +40,60 @@
     </head>
 
     <body>
+        <!-- Used in the experience skill template below -->
+        
+        <svg style="display: none;">
+            <!-- checkmark SVG for experience cards -->
+            <symbol id="experience-checkmark" viewBox="0 0 24 24">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+            </symbol>
+            
+            <!-- clock SVG for experience cards -->
+            <symbol id="experience-clock" viewBox="0 0 24 24">
+                <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M16.2,16.2L11,13V7H12.5V12.2L17,14.9L16.2,16.2Z"/>
+            </symbol>
+        </svg>
+
+        <template id="experience-skill-template">
+            <li class="tag-container front-end">
+                <div class="tag-shape"></div>
+                <div class="tag-contents">JavaScript</div>
+
+                <div class="experience-info-container">
+
+                    <div class="experience-type-header">
+                        <h3 class="experience-type-title">Front-end</h3>
+                    </div>
+            
+                    <div class="experience-content">
+                        <div class="skill-level-detail">
+                            <svg class="skill-icon" fill="currentColor">
+                                <use href="#experience-checkmark" />
+                            </svg>
+
+                            <div class="skill-text">
+                                <div class="skill-level-label">Skill Level:</div>
+                                <div class="skill-level-value">Advanced</div>
+                                <div class="progress-container">
+                                    <div class="progress-bar advanced"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="experience-level-detail">
+                            <svg class="skill-icon" fill="currentColor">
+                                <use href="#experience-clock"/>
+                            </svg>
+                            <div class="skill-text">
+                                <div class="experience-level-label">Experience:</div>
+                                <div class="experience-level-value">5+ years</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </li>
+        </template>
 
 		<nav>
             <div class="container">
@@ -158,40 +212,11 @@
 
                     <h2 id="heading-experience" class="title--sm layout-section-title">Experience</h2>
                     
-                    <ul class="tags">
-                        <li class="tag front-end">JavaScript</li>
-                        <li class="tag front-end">React</li>
-                        <li class="tag front-end">HTML</li>
-                        <li class="tag front-end">CSS</li>
-                        <li class="tag front-end">AG Grid</li>
-                        <li class="tag front-end">Material UI</li>
-                        <li class="tag front-end">jQuery</li>
+                    <div class="tags-and-pop-up">
+                        <!-- id is used to add a template to the DOM via script later. -->
+                        <ul id="experience-tags-list" class="tags"></ul>
+                    </div>
 
-                        <li class="tag back-end">Python</li>
-                        <li class="tag back-end">NumPy</li>
-                        <li class="tag back-end">OpenPyXl</li>
-                        <li class="tag back-end">Excel</li>
-
-                        <li class="tag version-control-workflow-tools">Git</li>
-                        <li class="tag version-control-workflow-tools">GitHub</li>
-                        <li class="tag version-control-workflow-tools">TortoiseGit</li>
-                        <li class="tag version-control-workflow-tools">Postman</li>
-                        <li class="tag version-control-workflow-tools">Docker Desktop</li>
-                        <li class="tag version-control-workflow-tools">Unfuddle</li>
-
-                        <li class="tag desktop">Delphi</li>
-                        <li class="tag desktop">Object Pascal</li>
-                        <li class="tag desktop">TMS VCL</li>
-                        <li class="tag desktop">SetupBuilder</li>
-
-                        <li class="tag miscellaneous">Visual Studio Code</li>
-                        <li class="tag miscellaneous">Webstorm</li>
-                        <li class="tag miscellaneous">Copilot</li>
-                        <li class="tag miscellaneous">JSON</li>
-                        <li class="tag miscellaneous">FileZilla</li>
-                        <li class="tag miscellaneous">VBA</li>
-                        <li class="tag miscellaneous">Java</li>
-                    </ul>
                 </section>
 
                 <section id="contact-me" class="layout-section" aria-labelledby="heading-contact-me">
@@ -274,6 +299,119 @@
                 </div>
             </div>
         </footer>
+
+        <!-- After all DOM elements have been loaded, add experience tags and pop-ups. Avoids layout shifts as well. -->
+        <script>
+            /* Element with .tag-container class should have one of the following classes applied to it as well. */
+			const frontEndSkillClass = 'front-end';
+			const backEndSkillClass = 'back-end';
+			const versionControlWorkflowToolSkillClass = 'version-control-workflow-tools';
+			const desktopSkillClass = 'desktop';
+			const miscellaneousSkillClass = 'miscellaneous';
+			
+            /* Experience type text. Element with .experience-type-title class should have its textContent set to this. */
+			const frontEndSkillText = 'Front-end';
+			const backEndSkillText = 'Back-end';
+			const versionControlWorkflowToolSkillText = 'Version control / Workflow';
+			const desktopSkillText = 'Desktop';
+			const miscellaneousSkillText = 'Miscellaneous';
+			
+            /* Element with .progress-bar class should have one of the following classes applied to it as well. */
+			const beginnerProgressClass = 'beginner';
+			const intermediateProgressClass = 'intermediate';
+			const advancedProgressClass = 'advanced';
+			const expertProgressClass = 'expert';
+
+            /* Skill level text. Element with .skill-level-value class should have its textContent set to this. */
+			const beginnerSkillLevelText = 'Beginner';
+			const intermediateSkillLevelText = 'Intermediate';
+			const advancedSkillLevelText = 'Advanced';
+			const expertSkillLevelText = 'Expert';
+
+            function createSkill(listItemClass, progressBarClass, name, experienceType, experienceLevel, experienceDuration) {
+                return {
+                    listItemClass,    
+                    progressBarClass, 
+                
+                    name,               
+                    experienceType,     
+                    experienceLevel,    
+                    experienceDuration, 
+                };
+            };
+
+            skills = [
+                createSkill(frontEndSkillClass, advancedProgressClass, 'JavaScript', frontEndSkillText, advancedSkillLevelText, '5+ years'),
+                createSkill(frontEndSkillClass, advancedProgressClass, 'React', frontEndSkillText, advancedSkillLevelText, '4+ years'),
+                createSkill(frontEndSkillClass, advancedProgressClass, 'HTML', frontEndSkillText, advancedSkillLevelText, '5+ years'),
+                createSkill(frontEndSkillClass, advancedProgressClass, 'CSS', frontEndSkillText, advancedSkillLevelText, '5+ years'),
+                createSkill(frontEndSkillClass, advancedProgressClass, 'AG Grid', frontEndSkillText, advancedSkillLevelText, '3+ years'),
+                createSkill(frontEndSkillClass, advancedProgressClass, 'Material UI', frontEndSkillText, advancedSkillLevelText, '3+ years'),
+                createSkill(frontEndSkillClass, intermediateProgressClass, 'jQuery', frontEndSkillText, intermediateSkillLevelText, '1+ years'),
+
+                createSkill(backEndSkillClass, advancedProgressClass, 'Python', backEndSkillText, advancedSkillLevelText, '3+ years'),
+                createSkill(backEndSkillClass, intermediateProgressClass, 'NumPy', backEndSkillText, intermediateSkillLevelText, '3+ years'),
+                createSkill(backEndSkillClass, intermediateProgressClass, 'OpenPyXl', backEndSkillText, intermediateSkillLevelText, '3+ years'),
+                createSkill(backEndSkillClass, advancedProgressClass, 'Excel', backEndSkillText, advancedSkillLevelText, '16+ years'),
+
+                createSkill(versionControlWorkflowToolSkillClass, intermediateProgressClass, 'Git', versionControlWorkflowToolSkillText, intermediateSkillLevelText, '10+ years'),
+                createSkill(versionControlWorkflowToolSkillClass, intermediateProgressClass, 'GitHub', versionControlWorkflowToolSkillText, intermediateSkillLevelText, '10+ years'),
+                createSkill(versionControlWorkflowToolSkillClass, intermediateProgressClass, 'TortoiseGit', versionControlWorkflowToolSkillText, intermediateSkillLevelText, '10+ years'),
+                createSkill(versionControlWorkflowToolSkillClass, intermediateProgressClass, 'Postman', versionControlWorkflowToolSkillText, intermediateSkillLevelText, '3+ years'),
+                createSkill(versionControlWorkflowToolSkillClass, beginnerProgressClass, 'Docker', versionControlWorkflowToolSkillText, beginnerSkillLevelText, '3+ years'),
+                createSkill(versionControlWorkflowToolSkillClass, advancedProgressClass, 'Unfuddle', versionControlWorkflowToolSkillText, advancedSkillLevelText, '10+ years'),
+
+                createSkill(desktopSkillClass, advancedProgressClass, 'Delphi', desktopSkillText, advancedSkillLevelText, '16+ years'),
+                createSkill(desktopSkillClass, advancedProgressClass, 'Object Pascal', desktopSkillText, advancedSkillLevelText, '16+ years'),
+                createSkill(desktopSkillClass, advancedProgressClass, 'TMS VCL', desktopSkillText, advancedSkillLevelText, '16+ years'),
+                createSkill(desktopSkillClass, advancedProgressClass, 'SetupBuilder', desktopSkillText, advancedSkillLevelText, '16+ years'),
+
+                createSkill(miscellaneousSkillClass, intermediateProgressClass, 'Visual Studio Code', miscellaneousSkillText, intermediateSkillLevelText, '3+ years'),
+                createSkill(miscellaneousSkillClass, intermediateProgressClass, 'Webstorm', miscellaneousSkillText, intermediateSkillLevelText, '3+ years'),
+                createSkill(miscellaneousSkillClass, advancedProgressClass, 'Copilot', miscellaneousSkillText, advancedSkillLevelText, '2+ years'),
+                createSkill(miscellaneousSkillClass, intermediateProgressClass, 'Balsamiq', miscellaneousSkillText, intermediateSkillLevelText, '3+ years'),
+                createSkill(miscellaneousSkillClass, advancedProgressClass, 'JSON', miscellaneousSkillText, advancedSkillLevelText, '7+ years'),
+                createSkill(miscellaneousSkillClass, intermediateProgressClass, 'VBA', miscellaneousSkillText, intermediateSkillLevelText, '3+ years'),
+                createSkill(miscellaneousSkillClass, intermediateProgressClass, 'Java', miscellaneousSkillText, intermediateSkillLevelText, '4+ years'),
+                createSkill(miscellaneousSkillClass, advancedProgressClass, 'FileZilla', miscellaneousSkillText, advancedSkillLevelText, '16+ years'),
+            ];
+			
+			
+            /* Get reference to the experience skills template (all the experience skills tags and their pop-ups) and the <ul> they 
+               belong to. */
+            const experienceSkillsTemplate = document.getElementById('experience-skill-template');
+            const experienceTagsList = document.getElementById('experience-tags-list');
+
+            if (experienceSkillsTemplate && experienceTagsList) {
+                /* DocumentFragment is a lightweight, minimal DOM container with which we can build up a collection of DOM nodes
+                   in memory before injecting them into the DOM. This will give us a performance boost, since we won't need to
+                   repaint for each experience skill. */
+                const fragment = document.createDocumentFragment();
+
+                skills.forEach(skillObj => {
+                    /* Create the experience tag and pop-up for the skill. */
+                    const experienceSkill = experienceSkillsTemplate.content.cloneNode(true);
+
+                    /* Customize it. */
+                    experienceSkill.querySelector('.tag-contents').textContent = skillObj.name;
+                    experienceSkill.querySelector('.experience-type-title').textContent = skillObj.experienceType;
+                    experienceSkill.querySelector('.skill-level-value').textContent = skillObj.experienceLevel;
+                    experienceSkill.querySelector('.experience-level-value').textContent = skillObj.experienceDuration;
+
+                    /* Tells the tag if it should receive front-end, back-end, etc. styling. */
+                    experienceSkill.querySelector('.tag-container').classList.add(skillObj.listItemClass);
+
+                    /* Tells the progress bar if it should receive beginner, advanced, etc. styling. */
+                    experienceSkill.querySelector('.progress-bar').classList.add(skillObj.progressBarClass);
+
+                    /* Add the experience tag and pop-up to the fragment. */
+                    fragment.appendChild(experienceSkill);
+                });
+
+                /* Add all experience tags and pop-ups to the <ul> at once. */
+                experienceTagsList.appendChild(fragment); 
+            }
+        </script>
 
     </body>
 

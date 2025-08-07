@@ -25,3 +25,18 @@ const prefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
 if (prefersLight) {
     document.documentElement.classList.add("light-theme");
 }
+
+/*********************************   Nav bar bottom border shadow   ***************************/
+
+/* Add or remove "scrolled" class to the <nav> element depending on if the user has scrolled so 
+   we can style it differently for each case. */
+window.addEventListener("scroll", () => {
+    const nav = document.querySelector("nav");
+    
+    if (window.scrollY > 0) {
+      nav.classList.add("scrolled");
+    } 
+    else {
+      nav.classList.remove("scrolled");
+    }
+});

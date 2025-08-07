@@ -26,6 +26,8 @@
     /* I'd rather have the media queries together to address small device issues in the same place. */
     /*--gap: clamp(30px, 10vw, 80px); */ 
     --gap: 80px;
+
+    --nav-bar-height: 113px;
 	
 	--right-arrow-img-path: url('/src/assets/arrow-right.svg');
     --logo-img-path: url('/src/assets/MR-logo-512.png');
@@ -58,6 +60,9 @@
 body {
     font-family: "Poppins", sans-serif;
     margin: 0;
+
+    /* Needed for nav bar to appear solid. (<html> --> <body> --> <nav> */
+    background-color: inherit;
 }
 
 html {
@@ -86,3 +91,10 @@ html.light-theme {
 input, textarea, button, select {
     font: inherit;
 }
+
+/* Offset the <main> content to prevent it from being overlapped by the fixed <nav> bar.
+   This margin should match the nav bar's height. Extra 100 is for some space before my name. */
+main {
+    margin-top: calc(var(--nav-bar-height) + 100px);
+}
+

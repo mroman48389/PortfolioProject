@@ -46,7 +46,7 @@
 
     /* Add a slight shadow to the shape to make up for the fact that the border does not appear to be the same thickness when the
        shape is an arrow. It will also show on the experience div for a unified theme. */
-    filter: drop-shadow(0 0 3px var(--experience-type-color)); 
+    filter: drop-shadow(0 0 3px var(--experience-type-glow-color)); 
 } 
 
 /* tag-shape will focus on the shape of the tag. */
@@ -184,35 +184,33 @@
 
 /*****************************   Experience colors   ********************************/
 
-/* Color the tags differently depending on the type of experience (skill/technology).  */
+/* Color the tags differently depending on the type of experience (skill/technology). Experience type color is against a white background
+   regardless of dark/light mode, so it's always the same color. The glow has to be slightly different depending on mode since the background
+   color changes in dark/light mode. */
 .front-end {
-    --experience-type-color: var(--kelly-green);
+    --experience-type-color: var(--exp-front-end-color);
+    --experience-type-glow-color: var(--exp-front-end-glow-color);
 }
 
 .back-end {
-    --experience-type-color: var(--teal);
+    --experience-type-color: var(--exp-back-end-color);
+    --experience-type-glow-color: var(--exp-back-end-glow-color);
 }
 
 .version-control-workflow-tools {
-    --experience-type-color: var(--brown-yellow);
+    --experience-type-color: var(--exp-version-control-workflow-tools-color);
+    --experience-type-glow-color: var(--exp-version-control-workflow-tools-glow-color);
 }
 
 .desktop {
-    --experience-type-color: var(--milano-red);
+    --experience-type-color: var(--exp-desktop-color);
+    --experience-type-glow-color: var(--exp-desktop-glow-color);
 }
 
 .miscellaneous {
-    --experience-type-color: var(--vibrant-purple);
+    --experience-type-color: var(--exp-miscellaneous-color);
+    --experience-type-glow-color: var(--exp-miscellaneous-glow-color);
 }
-
-
-
-
-
-
-
-
-
 
 .experience-type-title {
     font-size: 1.25em;

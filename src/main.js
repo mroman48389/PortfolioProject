@@ -2,8 +2,11 @@
 
 /* Mimic the behavor of clicking on the "About me" anchor. This will get attached to a button. */
 document.querySelector("#scroll-down").addEventListener("click", () => {
+    const rootStyles = getComputedStyle(document.documentElement);
+    const navBarHeight = parseFloat(rootStyles.getPropertyValue('--nav-bar-height'));
+
     window.scrollTo({
-        top: document.querySelector("#about-me").offsetTop - 20,
+        top: document.querySelector("#about-me").offsetTop - navBarHeight,
     });
 });
 

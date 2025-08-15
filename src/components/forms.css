@@ -17,7 +17,7 @@
 }
 
 .input:focus {
-    border-bottom: var(--primary) solid 1px;
+    border-bottom: var(--banana-drama) solid 1px;
     outline: none;
 }
 

@@ -12,7 +12,7 @@
 
     cursor: pointer;
 
-    fill: var(--dark-icon);
+    fill: var(--dark-icon-color);
 
     transition: translate 300ms fill 200ms;
     animation: bounce 1.6s infinite cubic-bezier(0.445, 0.05, 0.55, 0.95); /* EaseInOutSine from https://easings.net/ */
@@ -24,7 +24,7 @@
 }
 
 #scroll-down:hover {
-    fill: var(--light-icon);
+    fill: var(--dark-mode-icon-color);
 }
 
 @keyframes bounce {

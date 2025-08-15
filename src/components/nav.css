@@ -19,7 +19,7 @@ nav {
 
 /* .scrolled is added/removed by JavaScript depending on if the window is in a scrolled position. If it is, add a subtle shadow to the bottom. */
 nav.scrolled {
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--nav-shadow-box);
 }
 
 /* Entire nav consists of a logo we want on the left and an unordered list of nav anchors we want as 
@@ -28,8 +28,9 @@ nav.scrolled {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* Looks better with no left or right padding. */ 
-    padding: 20px 0px;
+    /* Looks better with no left padding. Right padding is needed to not overlap with light/dark mode button. */ 
+    padding-block: 30px;
+    padding-right: 90px;
 
     /* Make it less jarring when we add/remove the padding on scroll changes. */
     transition: padding 0.3s ease;
@@ -37,7 +38,7 @@ nav.scrolled {
 
 /* Padding doesn't look good when the user has scrolled, so just remove it. */
 nav.scrolled .nav {
-    padding: 0px;
+    padding-block: 0px;
 }
 
 /* This styles just the list part of the nav. */

@@ -1,27 +1,50 @@
 :root {
-    /* Theme independent colors */
+    /* Theme independent variables */
     --dark-blue: #130c24;
-    --primary: #f2d544;
+    --banana-drama: #f2d544;
     --black: #232020;
     --gray: #999999;
     --beige: #f5f5f1;
+    --gray-dark: #666666;
+    --gray-light: #bdbdbd;
 
-    /* For Experience section */
-    --dark-olive: #2c4205;
-    --kelly-green: #2bbd04;
-    --blue-zodiac: #0b2347;
+    --sour-apple-rings: #2bbd04;
     --brown-yellow: #ba9807;
     --milano-red: #ba1a0b;
     --vibrant-purple: #c715d1;
     --teal: #069989;
 
-    /* Theme dependent colors */
+    --becquerel: #4df021;
+    --gold: #ffd700;
+    --tomato-frog: #ff4444;
+    --clematis-magenta: #e555f0;
+    --ice-climber: #20e6d2;
+
+    --sun-color: #fdd835;       /* Bright yellow */
+    --moon-color: #90caf9;      /* Soft blue */
+    --arrow-color: #757575;     /* Neutral gray */
+    --dark-mode-icon-color: #000;   /* Fallback */
+
+    --exp-front-end-color: var(--sour-apple-rings);
+    --exp-back-end-color: var(--teal);
+    --exp-version-control-workflow-tools-color: var(--brown-yellow);
+    --exp-desktop-color: var(--milano-red);
+    --exp-miscellaneous-color: var(--vibrant-purple);
+
+    --exp-front-end-glow-color: var(--becquerel);
+    --exp-back-end-glow-color: var(--ice-climber);
+    --exp-version-control-workflow-tools-glow-color: var(--gold);
+    --exp-desktop-glow-color: var(--tomato-frog);
+    --exp-miscellaneous-glow-color: var(--clematis-magenta);
+
+    /* Theme dependent variables */
     --text-color: white;
-    --light-icon: white;
-    --gray-dark: #666666;
-    --gray-light: #bdbdbd;
-    --dark-icon: var(--black);
-    --anchor-color: var(--primary);
+    --dark-mode-icon-color: white;
+    --dark-icon-color: var(--black);
+    --anchor-color: var(--banana-drama);
+
+    --nav-shadow-box-light-color: 0 2px 6px rgba(161, 49, 49, 0.1);
+    --nav-shadow-box: 0 3px 6px rgba(200, 160, 255, 0.15);
 
     /* I'd rather have the media queries together to address small device issues in the same place. */
     /*--gap: clamp(30px, 10vw, 80px); */ 
@@ -47,10 +70,17 @@
 /* If light-theme was added via the JavaScript in main.js, switch to light mode colors. */
 :root.light-theme {
     --text-color: var(--black);
-    --light-icon: var(--black);
+    --dark-mode-icon-color: var(--black);
     --gray-light: var(--gray-dark);
-    --dark-icon: white;
+    --dark-icon-color: white;
     --anchor-color: var(--black);
+    --nav-shadow-box: var(--nav-shadow-box-light-color);
+
+    --exp-front-end-glow-color: var(--sour-apple-rings);
+    --exp-back-end-glow-color: var(--teal);
+    --exp-version-control-workflow-tools-glow-color: var(--brown-yellow);
+    --exp-desktop-glow-color: var(--milano-red);
+    --exp-miscellaneous-glow-color: var(--vibrant-purple);
 }
 
 * {
@@ -73,7 +103,7 @@ html {
 /* Change color of text and background when the user selects it. */
 html::selection {
     color: var(--black);
-    background-color: var(--primary);
+    background-color: var(--banana-drama);
 }
 
 /* If light-theme was added via the JavaScript in main.js, switch to light mode color. */
@@ -97,4 +127,3 @@ input, textarea, button, select {
 main {
     margin-top: calc(var(--nav-bar-height) + 100px);
 }
-

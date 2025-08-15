@@ -21,10 +21,10 @@
      translate: 1px 1px;   
 }
 
+/* Animates the swapping of the sun and moon. */
 .icon-sun,
 .icon-moon {
-  transition: transform 0.6s ease; /* Animates the swapping of the sun and moon. */
-  /* transform: translate(12px, 12px) scale(1.25); default position */
+  transition: transform 0.6s ease; 
 }
 
 /* In the default dark theme, the sun will start on the right. Make it a bit bigger. */
@@ -44,4 +44,33 @@ html.light-theme .icon-sun {
 
 html.light-theme .icon-moon {
   transform: translate(65px, 12px) rotate(-15.7deg) scale(1.25);
+}
+
+.toggle-theme-container {
+    position: relative;
+}
+
+.toggle-theme-tooltip {
+    position: absolute;
+    top: 0%;
+    /* Start the tooltip to the left of its parent based (this is based on the parent's width). We want some gap between the tooltip and 
+       the dark/light theme toggle. */
+    left: -200%; 
+
+    background-color: var(--tooltip-background-color);
+    color: var(--tooltip-text-color);
+    padding: 6px 10px;
+    border-radius: 4px;
+    white-space: nowrap;
+
+    z-index: 10;
+
+    /* Invisible by default. */
+    opacity: 0; 
+    transition: opacity 0.3s ease;
+}
+
+/* Show dark/light mode tooltip when hovering over button. */
+.toggle-theme-container:hover .toggle-theme-tooltip {
+  opacity: 1;
 }

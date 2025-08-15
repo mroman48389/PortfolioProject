@@ -114,8 +114,8 @@
                 </div>  
             </div>
 
-            <button id="toggle-theme" aria-label="Toggle dark theme">
-                <!-- Set the fill color on the svg element to the dark mode icon color so we can use it as the currentColor. -->
+            <button id="toggle-theme" class="toggle-theme-container" aria-label="Toggle dark theme">
+                <!-- Set the fill on the SVG to define currentColor for child elements. This allows icons to inherit theme color via CSS. -->
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 24" width="90px" height="24px" fill="var(--dark-mode-icon-color)">
                     <!-- Using the <g> (group element) allows us to apply transformation, styles and attributes to portions of our svg icon 
                         such as just the sun's rays, both the sun's rays and core, etc. -->
@@ -139,7 +139,8 @@
                         </g>
                     </g>
                   
-                    <!-- Arrow -->
+                    <!-- Arrow. The arrow will never move, so move it 35 pixels to the right and 12 down from its origin of (0, 0) using a
+                         static transform. -->
                     <g transform="translate(35, 12)" fill="currentColor">
                         <polygon points="8,0 3,-4 3,4"/>
                     </g>
@@ -148,7 +149,9 @@
                     <g class="icon-moon">
                         <path d="M0,-6 A6,6 0 1,0 0,6 A3,6 0 1,1 1.2,-6 Z" fill="currentColor"/>
                     </g>
-                  </svg>
+                </svg>
+                
+                <span class="toggle-theme-tooltip text--tooltip" id="toggle-theme-tooltip">Switch to dark mode</span>
             </button>
 		</nav>
 

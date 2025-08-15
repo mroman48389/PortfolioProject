@@ -18,8 +18,14 @@ document.querySelector("#scroll-down").addEventListener("click", () => {
    are adding light-theme to the html element and can then use html.light-theme in the CSS to
    change the colors in light mode. Since :root also refers to the html element, we can do
    :root.light-theme to change the color variables we defined. */
+
+const darkLightModeTooltip = document.querySelector("#toggle-theme-tooltip");
+
 document.querySelector("#toggle-theme").addEventListener("click", () => {
     document.documentElement.classList.toggle("light-theme");
+
+    const isLightTheme = document.documentElement.classList.contains("light-theme");
+    darkLightModeTooltip.textContent = isLightTheme ? "Switch to dark mode" : "Switch to light mode";
 });
 
 /* Also add light-theme to the html element if the user prefers it. */
@@ -27,6 +33,10 @@ const prefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
 
 if (prefersLight) {
     document.documentElement.classList.add("light-theme");
+    darkLightModeTooltip.textContent = "Switch to dark mode";
+}
+else {
+    darkLightModeTooltip.textContent = "Switch to light mode";
 }
 
 /*********************************   Nav bar bottom border shadow   ***************************/

@@ -7,6 +7,7 @@
     --beige: #f5f5f1;
     --gray-dark: #666666;
     --gray-light: #bdbdbd;
+    --illicit-purple: #333333;
 
     --sour-apple-rings: #2bbd04;
     --brown-yellow: #ba9807;
@@ -36,6 +37,9 @@
     --exp-version-control-workflow-tools-glow-color: var(--gold);
     --exp-desktop-glow-color: var(--tomato-frog);
     --exp-miscellaneous-glow-color: var(--clematis-magenta);
+
+    --tooltip-background-color: var(--illicit-purple);
+    --tooltip-text-color: white;
 
     /* Theme dependent variables */
     --text-color: white;

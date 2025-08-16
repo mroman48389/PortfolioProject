@@ -1,14 +1,14 @@
 /**************************************   Scroll anchors   *****************************************/
 
-/* Mimic the behavor of clicking on the "About me" anchor. This will get attached to a button. */
-document.querySelector("#scroll-down").addEventListener("click", () => {
-    const rootStyles = getComputedStyle(document.documentElement);
-    const navBarHeight = parseFloat(rootStyles.getPropertyValue('--nav-bar-height'));
+/* Mimic the behavor of clicking on the "About me" anchor. This will get attached to a button. FEATURE REMOVED. */
+// document.querySelector("#scroll-down").addEventListener("click", () => {
+//     const rootStyles = getComputedStyle(document.documentElement);
+//     const navBarHeight = parseFloat(rootStyles.getPropertyValue('--nav-bar-height-unscrolled'));
 
-    window.scrollTo({
-        top: document.querySelector("#about-me").offsetTop - navBarHeight,
-    });
-});
+//     window.scrollTo({
+//         top: document.querySelector("#about-me").offsetTop - navBarHeight,
+//     });
+// });
 
 /*****************************    Light/dark mode   *********************************************/
 
@@ -53,3 +53,51 @@ window.addEventListener("scroll", () => {
       nav.classList.remove("scrolled");
     }
 });
+
+/****************************  About me subsection fade in/outs  *********************************/
+
+/* Grab all elements assigned the class "about-me-subsection" in the order they appear in the DOM. */
+const aboutMeSubsections = document.querySelectorAll('.about-me-subsection');
+
+/* For each subsection (element [el]) we grabbed, add one of two classes to it depending on if we 
+   want it to slide in from the left side of the screen or the right side. The first should slide in
+   from the left and they should alternate. This avoids needing to assign this classes manually in the
+   HTML. */
+aboutMeSubsections.forEach((el, i) => {
+    el.classList.add(i % 2 === 0 ? 'slide-in-from-left' : 'slide-in-from-right');
+});
+
+function animateOnScroll(elements, threshold = 0.2) {
+  /* Create a new instance of IntersectionObserver. The IntersectionObserver API efficiently 
+    detects when elements enter or exit the viewport (more efficiently than scroll event listeners). 
+    In this case, the elements will be the subsections of our About me section.
+    
+    The callback function IntersectionObserver takes will run whenever an observed element (subsection) 
+    is in the viewport. The callback receives an array ("entries"). Each item in the array represents an 
+    observed element and its interaction status. 
+
+    The options object IntersectionObserver takes contains a threshold telling it at what percent 
+    visibility of the element IntersectionObserver should trigger the callback.  So, at 0.2, the callback triggers 
+    as soon as 20% of the subsection is in the viewport. 0 would trigger it if even one pixel in the subsection was 
+    in the viewport. 1 would only trigger it if all (100%) of the subsection was in the viewport.
+  */
+  const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+          /* If any part of the subsection is in the viewport, (subject to the threshold set), ... */
+          if (entry.isIntersecting) {
+              /* Add "visible" to the subsection so that the CSS animation will be triggered. */
+              entry.target.classList.add('visible');
+              /* Stop observing the subsection if it becomes visible so that the animation runs only
+                once (even if the user scrolls away and back). */
+              observer.unobserve(entry.target);
+          }
+      });
+  }, {
+    threshold: 0.5
+  });
+
+  /* Start observing each subsection so the animation triggers when it enters the viewport. */
+  aboutMeSubsections.forEach(el => observer.observe(el));
+}
+
+animateOnScroll(aboutMeSubsections);

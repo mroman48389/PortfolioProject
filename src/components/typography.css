@@ -13,7 +13,7 @@
     line-height: 1.05;
 }
 
-.title {
+.title--normal {
     font-size: 2rem; /* 32px / 16 */
     font-weight: normal;
     line-height: 1.77;

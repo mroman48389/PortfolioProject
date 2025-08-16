@@ -156,27 +156,101 @@
 		</nav>
 
         <main>
-            <div class="container">
-                <section id="intro" class="layout-section" aria-describedby="intro-h1 intro-h2">
+
+            <!-- Place the container class further down for the intro so it only contains the banner content. This allows us to expand the banner
+                 video across the entire width of the site.-->
+            <section id="intro" class="banner-container" aria-describedby="intro-h1 intro-h2">
+                <video autoplay muted loop playsinline class="banner-video">
+                    <source src="src/assets/blue-circuit-on-black.mp4" type="video/mp4" />
+                    <!-- Optional fallback text -->
+                    Video unsupported.
+                  </video>
+
+
+                <div class="container banner-content">
                     <h1 id="intro-h1" class="title--lg">Mark Roman,</h1>
                     <h2 id="intro-h2" class="title--med">Software Engineer</h2>
-                    <p class="text--xl">I enjoy crafting intuitive solutions that improve lives.</p>
+                    <p class="text--xl">Crafting intuitive solutions that improve lives.</p>
+                </div>
+            </section>
 
-                    <button id="scroll-down" aria-labelledby="about-me-h2">
-                        <svg xmlns="http://www.w3.org/2000/svg"
-                            height="48px"
-                            viewBox="0 0 24 24"
-                            width="48px">
-                            <path d="M0 0h24v24H0V0z" fill="none" />
-                            <path d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z" stroke="var(--dark-mode-icon-color)" />
-                        </svg>
-                    </button>
-                </section>
+            <div class="container">
+                <!--  Intro section was here with this arrow inside, but the arrow seemed rather pointless. I wanted a banner for the intro, so
+                      intro section was moved inside the banner. If you put this back in, be sure to uncomment the associated JavaScript. -->
+                <!-- <button id="scroll-down" aria-labelledby="about-me-h2">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                        height="48px"
+                        viewBox="0 0 24 24"
+                        width="48px">
+                        <path d="M0 0h24v24H0V0z" fill="none" />
+                        <path d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z" stroke="var(--dark-mode-icon-color)" />
+                    </svg>
+                </button> -->
 
                 <section id="about-me" class="layout-section" aria-labelledby="about-me-h2">
-                    <h2 id="about-me-h2" class="title--sm">About me</h1>
+                    <h2 id="about-me-h2" class="title--sm">About me</h2>
 
-                    <div class="layout-grid-half">
+                    <div class="about-me-subsection">
+                        <h3 id="about-me-education-h3" class="title--normal">Education</h3>
+
+                        <p class="text--lg">
+                            I studied mathematics and computer science at Western New England University, gaining a strong foundation 
+                            in reasoning, problem solving, and abstract thinking. When I wasn't evaluating page-long integrals or 
+                            writing proofs late into the night, I was studying data structures and churning out applets in my 
+                            foundational programming language, <span class="miscellaneous-text">Java</span>. I tutored and graded for 
+                            undergraduate mathematics courses and was involved in my school's honors and community service programs.
+                        </p>
+                    </div>
+
+                    <div class="about-me-subsection">
+                        <h3 id="about-me-professional-experience-h3" class="title--normal">Professional experience</h3>
+
+                        <p class="text--lg">
+                            I spent the next 16 years at Avenir Health building applications that model disease impact and associated costs, driving 
+                            improvements in global health outcomes. In the first half of my career, I learned how to build and deploy complex 
+                            desktop applications using <span class="desktop-text">Object Pascal</span> and 
+                            <span class="desktop-text">Delphi</span>. In the latter half, I developed web applications of a similar nature. 
+                            I built reusable components, managed state, integrated RESTful APIs from backend services, and created UIs on the 
+                            frontend with <span class="front-end-text">React</span>, <span class="front-end-text">JavaScript</span>, 
+                            <span class="front-end-text">Material UI</span>, <span class="front-end-text">HTML</span> and 
+                            <span class="front-end-text">CSS</span>. On the backend, I structured and read in databases, created 
+                            services to manage and manipulate data, and developed data structures and calculations using 
+                            <span class="back-end-text">Python</span> and <span class="back-end-text">NumPy</span>.
+                        </p>           
+                    </div>
+
+                    <div class="about-me-subsection">
+                        <h3 id="about-me-values-and-philosophies-h3" class="title--normal">Values and philosophies</h3>
+
+                        <p class="text--lg">
+                            Naturally curious and excited by exploration, I thrive on continuous learning and growth. I enjoy 
+                            collaborating with colleagues and clients, knowledge-sharing, and fostering positive and supportive environments. 
+                            I want the software I build to reflect thought, care, and quality.  UI/UX should be user-friendly and intuitive.
+                            Code should be maintainable, readable, consistent, efficient, and well-documentated. Simpler is generally better.
+                        </p>                     
+                    </div>
+
+                    <div class="about-me-subsection">
+                        <h3 id="about-me-hobbies-h3" class="title--normal">Hobbies</h3>
+
+                        <p class="text--lg">
+                            When I'm not coding, I enjoy discovering new music or playing my guitar or keyboard.  I also enjoy cooking and reading. 
+                            I may have a slight obsession with coffee and tea.
+                        </p>               
+                    </div>
+
+                    <div class="about-me-subsection">
+                        <h3 id="about-me-learn-more-h3" class="title--normal">Learn more</h3>
+
+                        <p class="text--lg">
+                            Curious to know more? Check out my
+                            <a href="#portfolio">portfolio</a> or
+                            <a href="#contact-me">contact me</a>.
+                        </p>          
+                    </div>
+
+                    <!-- I was trying to show off my grid abilities here, but the text was hard to read.-->
+                    <!-- <div class="layout-grid-half">
                         <div class="about-me-col-1">
                             <p class="text--lg">
                                 I studied mathematics and computer science at Western New England University, gaining a strong foundation 
@@ -214,7 +288,7 @@
                                 <a href="#contact-me">contact me</a>.
                             </p>
                         </div>
-                    </div>
+                    </div> -->
 
                 </section>
 
@@ -229,7 +303,7 @@
                         <img class="project-image" src="src/assets/Teapot-and-teacup-unsplash-square.jpg" width="300" height="300" alt="Teapot and teacup"/>
 
                         <div>
-                            <h3 class="title">Teaverse app</h3>
+                            <h3 class="title--normal">Teaverse app</h3>
         
                             <p class="text">
                                 The web app for all things tea!  Learn about loose leaf tea and teaware. Discover which tea is right for you.

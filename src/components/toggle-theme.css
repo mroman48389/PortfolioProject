@@ -72,5 +72,5 @@ html.light-theme .icon-moon {
 
 /* Show dark/light mode tooltip when hovering over button. */
 .toggle-theme-container:hover .toggle-theme-tooltip {
-  opacity: 1;
+    opacity: 1;
 }

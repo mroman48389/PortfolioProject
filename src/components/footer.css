@@ -10,7 +10,7 @@
     justify-content: center;
 }
 
-.footer-whole {
+.footer-copyright-media {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -22,14 +22,26 @@
 
 .footer-logo-plus-copyright {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-credits {
+    display: flex;
+    justify-content: flex-start;
     align-items: center;
     gap: 10px;
 }
 
 @media (max-width: 37.5rem) {
-   .footer-whole {
-        flex-direction: column;
-        gap: 10px;
-   } 
-}
+    .footer-copyright-media {
+         flex-direction: column;
+         gap: 10px;
+    } 
+
+    .footer-credits {
+        justify-content: center;
+    }
+ }
+ 

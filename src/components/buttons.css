@@ -1,5 +1,5 @@
 /*  
-    Button class that can be used for buttons and button-esque anchors. 
+    Button class that can be used for all buttons and button-esque anchors. 
 
     display: Inline-block allows changing of horizontal paddings for anchors; already the default for buttons.
 
@@ -19,7 +19,7 @@
     letter-spacing: 0.1rem;
     text-transform: uppercase;
 
-    /* Transitions. */
+    /* Make the button more opaque and move it very slightly to signal that the user can interact with it. */
     opacity: 0.8;
     transition: translate 200ms, opacity 200ms;
 }
@@ -32,9 +32,15 @@
     translate: 1px 1px;
 }
 
+/* For buttons in our nav bar. No background color. */
 .btn--nav {
     color: var(--text-color);
     padding: 10px;
+}
+
+.btn--show-email {
+    color: var(--text-color);
+    padding-left: var(--email-padding-left);
 }
 
 .btn--raised {
@@ -50,6 +56,7 @@
     background-position: right 20px center;
 }
 
+/* Puts a a thick, hollow line under the button text. No border, transparent looking. */
 .btn--line {
     color: var(--text-color);
     padding: 10px;
@@ -65,4 +72,9 @@
     width: 100%;
     
     border: var(--banana-drama) solid 1px;
+}
+
+/* Hidden is added via JavaScript if the user clicks a button. */
+.btn.hidden {
+    display: none;
 }

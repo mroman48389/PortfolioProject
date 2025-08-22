@@ -18,8 +18,8 @@
     grid-template-columns: 30px 1fr;
     grid-template-rows: auto auto;
     grid-template-areas: 
-        "icon description"
-        "blank details";
+        "icon description-lab-grid"
+        "blank address-grid";
     place-items: center;
     gap: 10px;
     margin-bottom: 30px;
@@ -29,19 +29,94 @@
     grid-column: 1 / 2;
 }
 
-#description {
+/* For "Address:" / "Email:" label of Contact Me grid. */
+#description-lab-grid {
     grid-column: 2 / 3;
     margin: 0px;
     width: 100%;
 }
 
-#details {
+/* For address or show email button / email. */
+#address-grid {
     grid-column: 2 / 3;
     margin: 0px;
     width: 100%;
 }
 
-.contact-me-submit-button {
+/* Place the Show email button and email in the same place as the address in the grid. */
+#show-email-grid, 
+#email-container-grid {
+    grid-area: address-grid;
+    margin: 0px;
+    margin-right: 10px;
+    padding-left: var(--email-padding-left);
+    width: 100%;
+}
+
+.email-fade-in {
+    opacity: 0;
+    animation: emailFadeIn 1s ease forwards;
+}
+  
+@keyframes emailFadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.contact-me-send-button {
     display: flex;
     justify-content: flex-end;
+    /* Needed for when error message is shown or there will be no space between the error message and the button. */
+    margin-top: 20px;
+}
+
+.form-fields {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-fields input:first-of-type {
+    margin-top: 0px;
+}
+
+.form-fields .error-message-container {
+    align-self: flex-end;
+}
+
+.contact-input {
+    /* Note: Without flexbox, display must be block or the <textarea> will be given extra space beneath it by the browser
+       because of a different display value than the <input>s have. */
+    /* display: block; */
+    padding: 10px;
+    margin-bottom: 5px;
+    margin-top: 20px;
+
+    border: 2px solid lightgray;
+    border-radius: 10px;
+    background-color: white;
+
+    /* Can't use typography classes for the font, since we inherit "font" for all <input> in _base.css. Specificity will
+       prevent our typography classes from working. */
+    font-size: var(--text-normal-size);
+    color: var(--dark-blue);
+}
+
+.error-message-container {
+    /* Reserve vertical space for potential error message pop-up to prevent layout shift. 1em is the font size of the parent element 
+       so 1.2em gives us a little breathing room. */
+    min-height: 1.2em; 
+}
+
+.error-message {
+    color: var(--error-message-color);
+    font-size: 0.875rem;
+    opacity: 0.8;
+    animation: errorMessageFadeIn 1s ease forwards;
+}
+
+@keyframes errorMessageFadeIn {
+    to {
+        opacity: 1;
+    }
 }

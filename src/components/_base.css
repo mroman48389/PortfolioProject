@@ -1,4 +1,6 @@
 :root {
+    /* Note: Colors are expected to start with dark mode and switch to light mode. */
+
     /* Theme independent variables */
     --dark-blue: #130c24;
     --banana-drama: #f2d544;
@@ -28,6 +30,9 @@
 
     --mist-white: #e3f6f7;
 
+    --poppy-red: #e63946;
+    --soft-alert: #f75555;
+
     --exp-front-end-color: var(--sour-apple-rings);
     --exp-back-end-color: var(--teal);
     --exp-version-control-workflow-tools-color: var(--brown-yellow);
@@ -45,6 +50,8 @@
 
     --banner-content-color: var(--mist-white);
 
+    --error-message-color: var(--soft-alert);
+
     /* Theme dependent variables */
     --text-color: white;
     --dark-mode-icon-color: white;
@@ -58,11 +65,19 @@
     /*--gap: clamp(30px, 10vw, 80px); */ 
     --gap: 80px;
 
+    /* We will use these for our typography (and beyond in case we need to override font sizes set elsewhere). */
+    --text-lg-size : 1.4375rem; /* 23px / 16 */
+    --text-normal-size: 1.125rem; /* 18px / 16 */
+    --text-small-size: 1rem; /* 16px / 16 */
+
     --nav-bar-height-unscrolled: 113px;
 	/* --nav-bar-height-unscrolled: 113px; */
+    --email-padding-left: 5px;
 
 	--right-arrow-img-path: url('/src/assets/arrow-right.svg');
     --logo-img-path: url('/src/assets/MR-logo-512.png');
+
+    --banner-blue-circuit-video-url: '';
 }
 
 @media (max-width: 37.5rem) {
@@ -90,6 +105,8 @@
     --exp-version-control-workflow-tools-glow-color: var(--brown-yellow);
     --exp-desktop-glow-color: var(--milano-red);
     --exp-miscellaneous-glow-color: var(--vibrant-purple);
+
+    --error-message-color: var(--poppy-red);
 }
 
 * {

@@ -100,7 +100,7 @@ function initAboutMeSubsections() {
             }
         });
     }, {
-      threshold: 0.5
+      threshold: 0.1
     });
 
     /* Start observing each subsection so the animation triggers when it enters the viewport. */

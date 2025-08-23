@@ -33,6 +33,9 @@
     --poppy-red: #e63946;
     --soft-alert: #f75555;
 
+    --slate-gray: #5f6368;
+    --cool-gray: #b3b3b3;
+
     --exp-front-end-color: var(--sour-apple-rings);
     --exp-back-end-color: var(--teal);
     --exp-version-control-workflow-tools-color: var(--brown-yellow);
@@ -51,6 +54,8 @@
     --banner-content-color: var(--mist-white);
 
     --error-message-color: var(--soft-alert);
+
+    --disabled-color: var(--cool-gray);
 
     /* Theme dependent variables */
     --text-color: white;
@@ -107,6 +112,8 @@
     --exp-miscellaneous-glow-color: var(--vibrant-purple);
 
     --error-message-color: var(--poppy-red);
+
+    --disabled-color: var(--slate-gray);
 }
 
 * {

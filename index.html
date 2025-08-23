@@ -194,8 +194,8 @@
                         <h3 id="about-me-education-h3" class="title--normal">Education</h3>
 
                         <p class="text--lg">
-                            I studied <strong>mathematics</strong> and <strong>computer science</strong> at Western New England University, 
-                            gaining a strong foundation in <strong>reasoning</strong>, <strong>problem solving</strong>, and 
+                            I studied <span class="emphasis"><strong>mathematics</strong> and <strong>computer science</strong></span> at 
+                            Western New England University, gaining a strong foundation in <strong>reasoning</strong>, <strong>problem solving</strong>, and 
                             <strong>abstract thinking</strong>. When I wasn't evaluating page-long integrals or 
                             writing proofs late into the night, I was studying data structures and churning out applets in my 
                             foundational programming language, <span class="miscellaneous-text">Java</span>. I tutored and graded for 
@@ -229,13 +229,73 @@
                             I want the software I build to reflect <strong>thought, care, and quality</strong>.     
                         </p>         
                         
-                        <p class="text--lg">
-                            UI/UX should be <strong>user-friendly</strong> and <strong>intuitive</strong>. An app can have amazing functionality, but it won't 
-                            mean much if it doesn't look pretty and make the user <em>want</em> to use it. If you want your team to be happy (and you should),
-                            code should be <strong>maintainable, readable, consistent, organized, efficient, and well-documented</strong>. <strong>Simpler</strong> 
-                            is generally better. It's critical to know <em>why</em> code works like it does, not just <em>what</em> it does. 
-                            Above all, <strong>never give up.</strong> There is a logical reason behind every bug.
-                        </p>    
+                        <h4 id="about-me-philosophies-h4" class="text--lg">Philosophies</h4>
+                        <ul class="philosophies-list text--lg">
+                            <li>
+                                <div class="bullet-title">
+                                    <p>KISS</p>
+                                </div>
+                                <div class="bullet-description">
+                                    <p class="text--lg">
+                                        <strong> Simpler</strong> is generally better. Prefer readability over short, "clever" code. Fewer bugs. 
+                                        Fewer headaches. Fewer late-night debugging sessions.  Faster development and better maintainability. 
+                                        Be kind to your future self and others.
+                                    </p>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="bullet-title">
+                                    <p>Team health matters</p> 
+                                </div>
+                                <div class="bullet-description">
+                                    <p class="text--lg">
+                                        A strong, diverse team is a force to be reckoned with. Support, encourage, learn from, and teach your teammates. 
+                                        Bring out the best in one another. If criticism isn't constructive, keep it to yourself. 
+                                        Negativity is a cancer to teamwork and organizations. Code that is <strong>maintainable, readable, consistent, 
+                                        organized, efficient, and well-documented</strong> will preserve the team's sanity. 
+                                    </p>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="bullet-title">
+                                    <p>UI/UX is king</p> 
+                                </div>
+                                <div class="bullet-description">
+                                    <p class="text--lg">
+                                        An app can have flawless functionality, but it won't mean much if it doesn't look pretty and make the 
+                                        user <em>want</em> to use it. UI/UX should be <strong>user-friendly</strong> and <strong>intuitive</strong>. 
+                                    </p>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="bullet-title">
+                                    <p>Always ask why</p>
+                                </div>
+                                <div class="bullet-description">
+                                    <p class="text--lg">
+                                        It's critical to know <em>why</em> code works like it does, not just <em>what</em> it does. Code is a tool, 
+                                        and all tools are only good if used properly. The larger an app becomes, the more important it is to build it 
+                                        on a solid foundation of well-designed code. Never stop digging into the "whys" behind what you're building. 
+                                        Unless you're into clunky systems teeming with tricky bugs.
+                                    </p> 
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="bullet-title">
+                                    <p>No surrender</p>
+                                </div>
+                                <div class="bullet-description">
+                                    <p class="text--lg">
+                                        Above all, <strong>never give up.</strong> There is a logical reason behind every bug and 
+                                        often multiple ways of solving problems. Software engineering requires persistence.
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>  
                     </div>
 
                     <div class="about-me-subsection">
@@ -318,7 +378,8 @@
                                 The web app for all things tea!  Learn about loose leaf tea and teaware. Discover which tea is right for you.
                             </p>
             
-                            <a class="btn btn--line" href="https://example.com/" target="_blank">Visit</a>
+                            <span class="btn btn--line btn--disabled">Visit (Coming Soon!)</span>
+                            <!-- <a class="btn btn--line" href="https://example.com/" target="_blank">Visit</a> -->
                         </div>
                     </div>
 
@@ -377,7 +438,7 @@
 
                             <!-- Part of form; will automatically be a submit button. -->
                             <div class="contact-me-send-button">
-                                <button class=" btn btn--raised">Send</button>
+                                <button class=" btn btn--raised" type="submit">Send</button>
                             </div>
                         </form>
 
@@ -391,22 +452,39 @@
         <footer>
             <div class="container">
                 <div class="footer-credits">
-                    <small>Credits:</small>
-                    
-                    <p>
-                        <small> 
-                            Banner video courtesy of 
-                            <a href="https://pixabay.com/users/motionstock-13298494/?utm_source=link-attribution&utm_medium=referral&utm_campaign=video&utm_content=27725" target="_blank" rel="noopener">
-                                motionstock
-                            </a>
-                             from 
-                            <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=video&utm_content=27725" target="_blank" rel="noopener">
-                                Pixabay
-                            </a>
-                        </small>
-                    </p>
+                    <div class="credits-label">
+                        <small>Credits:</small>
+                    </div>
+    
+                    <div class="all-credits">    
+                        <p class="credit">
+                            <small> 
+                                Banner video courtesy of 
+                                <a href="https://pixabay.com/users/motionstock-13298494/?utm_source=link-attribution&utm_medium=referral&utm_campaign=video&utm_content=27725" target="_blank" rel="noopener">
+                                    motionstock
+                                </a>
+                                 from 
+                                <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=video&utm_content=27725" target="_blank" rel="noopener">
+                                    Pixabay.
+                                </a>
+                            </small>
+                        </p>
+    
+                        <p class="credit">
+                            <small> 
+                                Teaverse app photo courtesy of 
+                                <a href="https://unsplash.com/@oriento?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" target="_blank" rel="noopener">
+                                    五玄土 ORIENTO
+                                </a>
+                                 from 
+                                <a href="https://unsplash.com/photos/brown-kettle-and-white-cup-on-table-z26H7EPwARg?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" target="_blank" rel="noopener">
+                                    Unsplash.
+                                </a>
+                            </small>
+                        </p>
+                    </div>
                 </div>
-                
+
                 <div class="footer-copyright-media">
     
                     <div class="footer-logo-plus-copyright">

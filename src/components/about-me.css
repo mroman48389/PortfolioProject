@@ -39,6 +39,14 @@
     animation: slideInFromRight 1.5s ease-out forwards;
 }
 
+#about-me-philosophies-h4 {
+    color: var(--gray-light);
+}
+
+.philosophies-list li {
+    color: var(--gray-light);
+}
+
 @keyframes slideInFromLeft {
     0% {
       transform: translateX(-100%);

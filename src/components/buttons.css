@@ -74,6 +74,12 @@
     border: var(--banana-drama) solid 1px;
 }
 
+.btn--disabled {
+    color: var(--disabled-color);
+    pointer-events: none;
+    padding-left: 0px;
+}
+
 /* Hidden is added via JavaScript if the user clicks a button. */
 .btn.hidden {
     display: none;

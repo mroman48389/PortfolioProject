@@ -1,0 +1,12 @@
+.bullet-title {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+
+}
+
+.bullet-description {
+    display: block;
+    font-weight: normal;
+    margin-bottom: 15px;
+}

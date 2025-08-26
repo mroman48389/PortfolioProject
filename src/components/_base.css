@@ -82,8 +82,8 @@
 
     /* Paths */
 
-	--right-arrow-img-path: url('/src/assets/arrow-right.svg');
-    --logo-img-path: url('/src/assets/mr-logo-512.png');
+	--right-arrow-img-path: url('/assets/arrow-right.svg');
+    --logo-img-path: url('/assets/mr-logo-512.png');
 
     --banner-blue-circuit-video-url: '';
 }

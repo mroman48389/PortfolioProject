@@ -358,9 +358,22 @@
                             </div>
                         </address>
         
-                        <!-- Added custom validation in JavaScript -->
-                        <form netlify novalidate>
+                        <!-- Added custom validation in JavaScript. We can have Netlify receive user submissions to avoid having to set up a backend:
+                         
+                            name="contact": Identifier in the Netlify Dashboard.
+                            method="POST": Allows Netlify to process the submission.
+                            data-netlify="true": Tells Netlify to treat this as a form. 
+                            netlify-honeypot="bot-field": If this input gets filled in, Netlify will assume the message is from a bot
+                            and ignore it.-->
+                        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
                             <div class="form-fields">
+                                <p hidden>
+                                    <label>
+                                        Don’t fill this out if you're human: 
+                                        <input name="bot-field"/>
+                                    </label>
+                                </p>
+
                                 <!-- Labels are visually hidden, so are explicitly created rather than implicility. -->
                                 <label for="contact-me-name" class="sr-only">Name</label>
                                 <input id="contact-me-name" class="input contact-input text--lg" type="text" placeholder="Name" autocomplete="name" 
@@ -376,6 +389,8 @@
                                 <textarea id="contact-me-message" class="input contact-input text--lg" placeholder="Message" minlength="10" maxlength="1000" 
                                     name="message" required></textarea>
                                 <div class="error-message-container"></div>
+
+                                <div id="contact-me-success-message" class="message-sent-hidden">Thank you! Your message was sent.</div>
                             </div>
 
                             <!-- Part of form; will automatically be a submit button. -->

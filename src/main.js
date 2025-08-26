@@ -252,6 +252,23 @@ function initEmailRevealButton() {
 
 /*********************************************   Contact me - Form validation   ************************************/
 
+function initFormInputListeners() {
+  /* Grab the success message under the form inputs and the form inputs themselves. */
+  const successMessage = document.getElementById("contact-me-success-message");
+  const formInputs = document.querySelectorAll("#contact-me-name, #contact-me-email, #contact-me-message");
+
+  /* If the contents of any of the inputs change, remove the visible class from the sucess message and add the hidden class. 
+     This way, the user will know they must resubmit their message. */
+  formInputs.forEach(formInput => {
+    formInput.addEventListener("input", () => {
+      if (successMessage) {
+        successMessage.classList.remove("message-sent-visible");
+        successMessage.classList.add("message-sent-hidden");
+      }
+    });
+  });
+}
+
 function initContactFormValidation() {
   const contactForm = document.querySelector("form");
 
@@ -323,7 +340,35 @@ function initContactFormValidation() {
         }
       
         if (isValid) {
-          contactForm.submit();
+          /* Netlify will handle the form now. */
+          // contactForm.submit();
+
+          /* FormData is a built-in JavaScript class from Web API that lets us construct key-value pairs for form
+             submissions. Add a form name for Netlify (should match form name in HTML), which will be 
+             processing user messages for us so we avoid needing a backend for this simple project. */
+          const formData = new FormData(contactForm);
+          formData.append("form-name", "contact");
+        
+          fetch("/", {
+            method: "POST",
+            body: formData,
+          })
+          .then(() => {
+            /* We have a midden message telling the user their message was sent. Add the message-sent-visible class to see it. */
+            const successMessage = document.getElementById("contact-me-success-message");
+
+            if (successMessage) {
+              successMessage.classList.add("message-sent-visible");
+              /* Read the success message out loud after the user finishes their current interaction (not mid-typing/navigation). */
+              successMessage.setAttribute("aria-live", "polite");
+            }
+        
+            /* Clear the form */
+            contactForm.reset();
+          })
+          .catch((error) => {
+            console.error("Form submission error:", error);
+          });
         }
       }
     });
@@ -339,5 +384,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initAboutMeSubsections();
   initExperienceTagsAndPopups();
   initEmailRevealButton();
+  initFormInputListeners();
   initContactFormValidation();
 });

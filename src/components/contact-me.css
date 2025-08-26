@@ -99,6 +99,15 @@
     animation: errorMessageFadeIn 1s ease forwards;
 }
 
+.message-sent-hidden {
+    display: none;
+}
+
+.message-sent-visible {
+    display: block;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
 @media (max-width: 37.5rem) {
     .contact-me-grid {
         grid-template-columns: 1fr;

@@ -1,15 +1,3 @@
-/**************************************   Scroll anchors   *****************************************/
-
-/* Mimic the behavor of clicking on the "About me" anchor. This will get attached to a button. FEATURE REMOVED. */
-// document.querySelector("#scroll-down").addEventListener("click", () => {
-//     const rootStyles = getComputedStyle(document.documentElement);
-//     const navBarHeight = parseFloat(rootStyles.getPropertyValue('--nav-bar-height-unscrolled'));
-
-//     window.scrollTo({
-//         top: document.querySelector("#about-me").offsetTop - navBarHeight,
-//     });
-// });
-
 /*****************************    Light/dark mode   *********************************************/
 
 /* If the user clicks the element with id toggle-theme, add the light-theme class to html elements. 
@@ -110,6 +98,122 @@ function initAboutMeSubsections() {
   animateOnScroll(aboutMeSubsections);
 }
 
+/*******************************************   Experience tags and pop-ups  ******************************************/
+
+function initExperienceTagsAndPopups() {
+  /* Element with .tag-container class should have one of the following classes applied to it as well. */
+  const frontEndSkillClass = 'front-end';
+  const backEndSkillClass = 'back-end';
+  const versionControlWorkflowToolSkillClass = 'version-control-workflow-tools';
+  const desktopSkillClass = 'desktop';
+  const miscellaneousSkillClass = 'miscellaneous';
+
+  /* Experience type text. Element with .experience-type-title class should have its textContent set to this. */
+  const frontEndSkillText = 'Front-end';
+  const backEndSkillText = 'Back-end';
+  const versionControlWorkflowToolSkillText = 'Version control / Workflow';
+  const desktopSkillText = 'Desktop';
+  const miscellaneousSkillText = 'Miscellaneous';
+
+  /* Element with .progress-bar class should have one of the following classes applied to it as well. */
+  const beginnerProgressClass = 'beginner';
+  const intermediateProgressClass = 'intermediate';
+  const advancedProgressClass = 'advanced';
+  const expertProgressClass = 'expert';
+
+  /* Skill level text. Element with .skill-level-value class should have its textContent set to this. */
+  const beginnerSkillLevelText = 'Beginner';
+  const intermediateSkillLevelText = 'Intermediate';
+  const advancedSkillLevelText = 'Advanced';
+  const expertSkillLevelText = 'Expert';
+
+  function createSkill(listItemClass, progressBarClass, name, experienceType, experienceLevel, experienceDuration) {
+    return {
+      listItemClass,    
+      progressBarClass, 
+      
+      name,               
+      experienceType,     
+      experienceLevel,    
+      experienceDuration, 
+    };
+  };
+
+  const skills = [
+    createSkill(frontEndSkillClass, advancedProgressClass, 'JavaScript', frontEndSkillText, advancedSkillLevelText, '5+ years'),
+    createSkill(frontEndSkillClass, advancedProgressClass, 'React', frontEndSkillText, advancedSkillLevelText, '4+ years'),
+    createSkill(frontEndSkillClass, advancedProgressClass, 'HTML', frontEndSkillText, advancedSkillLevelText, '5+ years'),
+    createSkill(frontEndSkillClass, advancedProgressClass, 'CSS', frontEndSkillText, advancedSkillLevelText, '5+ years'),
+    createSkill(frontEndSkillClass, advancedProgressClass, 'AG Grid', frontEndSkillText, advancedSkillLevelText, '3+ years'),
+    createSkill(frontEndSkillClass, advancedProgressClass, 'Material UI', frontEndSkillText, advancedSkillLevelText, '3+ years'),
+    createSkill(frontEndSkillClass, intermediateProgressClass, 'jQuery', frontEndSkillText, intermediateSkillLevelText, '1+ years'),
+
+    createSkill(backEndSkillClass, advancedProgressClass, 'Python', backEndSkillText, advancedSkillLevelText, '3+ years'),
+    createSkill(backEndSkillClass, intermediateProgressClass, 'NumPy', backEndSkillText, intermediateSkillLevelText, '3+ years'),
+    createSkill(backEndSkillClass, intermediateProgressClass, 'OpenPyXl', backEndSkillText, intermediateSkillLevelText, '3+ years'),
+    createSkill(backEndSkillClass, advancedProgressClass, 'Excel', backEndSkillText, advancedSkillLevelText, '16+ years'),
+
+    createSkill(versionControlWorkflowToolSkillClass, intermediateProgressClass, 'Git', versionControlWorkflowToolSkillText, intermediateSkillLevelText, '10+ years'),
+    createSkill(versionControlWorkflowToolSkillClass, intermediateProgressClass, 'GitHub', versionControlWorkflowToolSkillText, intermediateSkillLevelText, '10+ years'),
+    createSkill(versionControlWorkflowToolSkillClass, intermediateProgressClass, 'TortoiseGit', versionControlWorkflowToolSkillText, intermediateSkillLevelText, '10+ years'),
+    createSkill(versionControlWorkflowToolSkillClass, intermediateProgressClass, 'Postman', versionControlWorkflowToolSkillText, intermediateSkillLevelText, '3+ years'),
+    createSkill(versionControlWorkflowToolSkillClass, beginnerProgressClass, 'Docker', versionControlWorkflowToolSkillText, beginnerSkillLevelText, '3+ years'),
+    createSkill(versionControlWorkflowToolSkillClass, advancedProgressClass, 'Unfuddle', versionControlWorkflowToolSkillText, advancedSkillLevelText, '10+ years'),
+
+    createSkill(desktopSkillClass, advancedProgressClass, 'Delphi', desktopSkillText, advancedSkillLevelText, '16+ years'),
+    createSkill(desktopSkillClass, advancedProgressClass, 'Object Pascal', desktopSkillText, advancedSkillLevelText, '16+ years'),
+    createSkill(desktopSkillClass, advancedProgressClass, 'TMS VCL', desktopSkillText, advancedSkillLevelText, '16+ years'),
+    createSkill(desktopSkillClass, advancedProgressClass, 'SetupBuilder', desktopSkillText, advancedSkillLevelText, '16+ years'),
+
+    createSkill(miscellaneousSkillClass, intermediateProgressClass, 'Visual Studio Code', miscellaneousSkillText, intermediateSkillLevelText, '3+ years'),
+    createSkill(miscellaneousSkillClass, intermediateProgressClass, 'Webstorm', miscellaneousSkillText, intermediateSkillLevelText, '3+ years'),
+    createSkill(miscellaneousSkillClass, advancedProgressClass, 'Copilot', miscellaneousSkillText, advancedSkillLevelText, '2+ years'),
+    createSkill(miscellaneousSkillClass, intermediateProgressClass, 'Balsamiq', miscellaneousSkillText, intermediateSkillLevelText, '3+ years'),
+    createSkill(miscellaneousSkillClass, advancedProgressClass, 'JSON', miscellaneousSkillText, advancedSkillLevelText, '7+ years'),
+    createSkill(miscellaneousSkillClass, intermediateProgressClass, 'VBA', miscellaneousSkillText, intermediateSkillLevelText, '3+ years'),
+    createSkill(miscellaneousSkillClass, intermediateProgressClass, 'Java', miscellaneousSkillText, intermediateSkillLevelText, '4+ years'),
+    createSkill(miscellaneousSkillClass, advancedProgressClass, 'FileZilla', miscellaneousSkillText, advancedSkillLevelText, '16+ years'),
+  ];
+
+
+  /* Get reference to the experience skills template (all the experience skills tags and their pop-ups) and the <ul> they 
+    belong to. */
+  const experienceSkillsTemplate = document.getElementById('experience-skill-template');
+  const experienceTagsList = document.getElementById('experience-tags-list');
+
+  if (experienceSkillsTemplate && experienceTagsList) {
+    /* DocumentFragment is a lightweight, minimal DOM container with which we can build up a collection of DOM nodes
+      in memory before injecting them into the DOM. This will give us a performance boost, since we won't need to
+      repaint for each experience skill. */
+    const fragment = document.createDocumentFragment();
+
+    skills.forEach(skillObj => {
+      /* Create the experience tag and pop-up for the skill. */
+      const experienceSkill = experienceSkillsTemplate.content.cloneNode(true);
+
+      /* Customize it. */
+      experienceSkill.querySelector('.tag-contents').textContent = skillObj.name;
+      experienceSkill.querySelector('.experience-type-title').textContent = skillObj.experienceType;
+      experienceSkill.querySelector('.skill-level-value').textContent = skillObj.experienceLevel;
+      experienceSkill.querySelector('.experience-level-value').textContent = skillObj.experienceDuration;
+
+      /* Tells the tag if it should receive front-end, back-end, etc. styling. */
+      experienceSkill.querySelector('.tag-container').classList.add(skillObj.listItemClass);
+
+      /* Tells the progress bar if it should receive beginner, advanced, etc. styling. */
+      experienceSkill.querySelector('.progress-bar').classList.add(skillObj.progressBarClass);
+
+      /* Add the experience tag and pop-up to the fragment. */
+      fragment.appendChild(experienceSkill);
+    });
+
+    /* Add all experience tags and pop-ups to the <ul> at once. */
+    experienceTagsList.appendChild(fragment); 
+  }
+}
+
+/*********************************************   Contact me - Reveal email button   ************************************/
+
 /* Add event listener to "Show email" button to hide my email from bots. My email will only be available if the user clicks on it. */
 function initEmailRevealButton() {
   const showEmailBtn = document.getElementById('show-email-grid');
@@ -145,6 +249,8 @@ function initEmailRevealButton() {
     });
   }
 }
+
+/*********************************************   Contact me - Form validation   ************************************/
 
 function initContactFormValidation() {
   const contactForm = document.querySelector("form");
@@ -231,6 +337,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initDarkMode();
   initNavScroll();
   initAboutMeSubsections();
+  initExperienceTagsAndPopups();
   initEmailRevealButton();
   initContactFormValidation();
 });

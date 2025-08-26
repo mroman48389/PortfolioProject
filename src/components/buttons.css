@@ -77,7 +77,7 @@
 .btn--disabled {
     color: var(--disabled-color);
     pointer-events: none;
-    padding-left: 0px;
+    padding: 0px;
 }
 
 /* Hidden is added via JavaScript if the user clicks a button. */

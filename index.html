@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 
 <html lang="en">
-
     <head>
-
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
@@ -16,7 +14,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
         <!-- Vite only bundles assets from src that are explicitly imported or referenced; favicon added to public (no bundling required). -->
-        <link rel="icon" type="image/png" href="./MR-favicon16.png">
+        <link rel="icon" type="image/png" href="./mr-favicon-16.png">
 
         <!-- Support dark and light modes with preference for dark. Processing here will prevent sudden change in background color. -->    
         <meta name="color-scheme" content="dark light">
@@ -36,13 +34,12 @@
           </script>
 
         <script type="module" src="./src/main.js"></script>
-
     </head>
 
     <body>
         <!-- Used in the experience skill template below -->
-        
         <svg style="display: none;">
+
             <!-- checkmark SVG for experience cards -->
             <symbol id="experience-checkmark" viewBox="0 0 24 24">
                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
@@ -52,15 +49,18 @@
             <symbol id="experience-clock" viewBox="0 0 24 24">
                 <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M16.2,16.2L11,13V7H12.5V12.2L17,14.9L16.2,16.2Z"/>
             </symbol>
+
         </svg>
 
+        <!-- Template for the experience tags and pop-ups.  There are many of them, so use a template to keep code DRY. -->
         <template id="experience-skill-template">
             <li class="tag-container front-end">
+                <!-- Experience tag itself. -->
                 <div class="tag-shape"></div>
                 <div class="tag-contents">JavaScript</div>
 
+                <!-- Experience pop-up with info about experience. -->
                 <div class="experience-info-container">
-
                     <div class="experience-type-header">
                         <h3 class="experience-type-title">Front-end</h3>
                     </div>
@@ -84,13 +84,13 @@
                             <svg class="skill-icon" fill="currentColor">
                                 <use href="#experience-clock"/>
                             </svg>
+
                             <div class="skill-text">
                                 <div class="experience-level-label">Experience:</div>
                                 <div class="experience-level-value">5+ years</div>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </li>
         </template>
@@ -98,9 +98,8 @@
 		<nav>
             <div class="container">
                 <div class="nav">
-
                     <div>
-                        <img src="./src/assets/MR-logo-512.png" width="50" height="50" alt="Mark Roman logo"/>
+                        <img src="./src/assets/mr-logo-512.png" width="50" height="50" alt="Mark Roman logo"/>
                     </div>
         
                     <ul class="nav-list">
@@ -110,7 +109,6 @@
                         <!-- <li><a href="#testimonials" class="btn btn--nav">Testimonials</a></li> -->
                         <li><a href="#contact-me" class="btn btn--nav btn--raised">Contact me</a></li>
                     </ul>
-
                 </div>  
             </div>
 
@@ -156,16 +154,14 @@
 		</nav>
 
         <main>
-
             <!-- Place the container class further down for the intro so it only contains the banner content. This allows us to expand the banner
                  video across the entire width of the site.-->
             <section id="intro" class="banner-container" aria-describedby="intro-h1 intro-h2">
                 <video autoplay muted loop playsinline class="banner-video">
-                    <source src="src/assets/blue-circuit-on-black.mp4" type="video/mp4" />
+                    <source src="src/assets/blue-circuit-on-black-pixabay.mp4" type="video/mp4" />
                     <!-- Optional fallback text -->
                     Video unsupported.
                   </video>
-
 
                 <div class="container banner-content">
                     <h1 id="intro-h1" class="title--lg">Mark Roman,</h1>
@@ -175,18 +171,6 @@
             </section>
 
             <div class="container">
-                <!--  Intro section was here with this arrow inside, but the arrow seemed rather pointless. I wanted a banner for the intro, so
-                      intro section was moved inside the banner. If you put this back in, be sure to uncomment the associated JavaScript. -->
-                <!-- <button id="scroll-down" aria-labelledby="about-me-h2">
-                    <svg xmlns="http://www.w3.org/2000/svg"
-                        height="48px"
-                        viewBox="0 0 24 24"
-                        width="48px">
-                        <path d="M0 0h24v24H0V0z" fill="none" />
-                        <path d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z" stroke="var(--dark-mode-icon-color)" />
-                    </svg>
-                </button> -->
-
                 <section id="about-me" class="layout-section" aria-labelledby="about-me-h2">
                     <h2 id="about-me-h2" class="title--sm">About me</h2>
 
@@ -246,20 +230,6 @@
 
                             <li>
                                 <div class="bullet-title">
-                                    <p>Team health matters</p> 
-                                </div>
-                                <div class="bullet-description">
-                                    <p class="text--lg">
-                                        A strong, diverse team is a force to be reckoned with. Support, encourage, learn from, and teach your teammates. 
-                                        Bring out the best in one another. If criticism isn't constructive, keep it to yourself. 
-                                        Negativity is a cancer to teamwork and organizations. Code that is <strong>maintainable, readable, consistent, 
-                                        organized, efficient, and well-documented</strong> will preserve the team's sanity. 
-                                    </p>
-                                </div>
-                            </li>
-
-                            <li>
-                                <div class="bullet-title">
                                     <p>UI/UX is king</p> 
                                 </div>
                                 <div class="bullet-description">
@@ -272,15 +242,29 @@
 
                             <li>
                                 <div class="bullet-title">
-                                    <p>Always ask why</p>
+                                    <p>Ask why</p>
                                 </div>
                                 <div class="bullet-description">
                                     <p class="text--lg">
-                                        It's critical to know <em>why</em> code works like it does, not just <em>what</em> it does. Code is a tool, 
-                                        and all tools are only good if used properly. The larger an app becomes, the more important it is to build it 
-                                        on a solid foundation of well-designed code. Never stop digging into the "whys" behind what you're building. 
+                                        It's critical to know <em>why</em> code works like it does, not just <em>what</em> it does. Deeper understanding 
+                                        leads to well-designed, robust apps. Never stop learning and digging into the "whys" behind what you're building. 
                                         Unless you're into clunky systems teeming with tricky bugs.
                                     </p> 
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="bullet-title">
+                                    <p>Team health matters</p> 
+                                </div>
+                                <div class="bullet-description">
+                                    <p class="text--lg">
+                                        A strong, happy, healthy, and diverse team is a force to be reckoned with. Support, encourage, learn from, and 
+                                        teach your teammates. Bring out the best in one another. If criticism isn't constructive, keep it to yourself. 
+                                        Negativity is a cancer to teamwork and organizations. Burnout doesn't help anyone. Be respectful of others and
+                                        their time. Code that is <strong>maintainable, readable, consistent, organized, efficient, and 
+                                        well-documented</strong> will preserve the team's sanity. 
+                                    </p>
                                 </div>
                             </li>
 
@@ -291,7 +275,9 @@
                                 <div class="bullet-description">
                                     <p class="text--lg">
                                         Above all, <strong>never give up.</strong> There is a logical reason behind every bug and 
-                                        often multiple ways of solving problems. Software engineering requires persistence.
+                                        often multiple ways of solving problems. Software engineering requires persistence. At the same time, 
+                                        accept that nothing will ever be perfect. New technologies and methods will eventually date your code.
+                                        Strive to deliver under an established set of standards.
                                     </p>
                                 </div>
                             </li>
@@ -318,58 +304,13 @@
                         </p>          
                     </div>
 
-                    <!-- I was trying to show off my grid abilities here, but the text was hard to read.-->
-                    <!-- <div class="layout-grid-half">
-                        <div class="about-me-col-1">
-                            <p class="text--lg">
-                                I studied mathematics and computer science at Western New England University, gaining a strong foundation 
-                                in reasoning, problem solving, and abstract thinking. When I wasn't evaluating page-long expressions or 
-                                writing proofs late into the night, I was studying data structures and churning out applets in my 
-                                foundational programming language, Java.
-                            </p>
-        
-                            <p class="text--lg">
-                                I spent the next 16 years at Avenir Health building applications that model disease impact and associated costs, driving 
-                                improvements in global health outcomes. In the first half of my career, I learned how to build and deploy complex 
-                                desktop applications using Object Pascal and Delphi. In the latter half, I developed web applications of a similar nature. 
-                                I built reusable components, managed state, integrated RESTful APIs from backend services, and created UIs on the 
-                                frontend with React, JavaScript, Material UI, HTML and CSS. On the backend, I structured and read in databases, created 
-                                services to manage and manipulate data, and developed data structures and calculations using Python and NumPy.
-                            </p>
-        
-                        </div>
-
-                        <div class="about-me-col-2">
-                            <p class="text--lg">
-                                Naturally curious and excited by exploration, I thrive on continuous learning. Valuing quality, 
-                                I want the software I build to reflect thought and care; for the user to enjoy using it and find doing so intuitive. 
-                                I strive for maintainability, readability, consistency, efficiency, and good documentation. 
-                            </p>
-
-                            <p class="text--lg">
-                                When I'm not coding, I enjoy discovering new music or playing my guitar or keyboard.  I also enjoy cooking and reading. 
-                                I may have a slight obsession with coffee and tea.
-                            </p>
-
-                            <p class="text--lg">
-                                Curious to know more? Check out my
-                                <a href="#portfolio">portfolio</a> or
-                                <a href="#contact-me">contact me</a>.
-                            </p>
-                        </div>
-                    </div> -->
-
                 </section>
-
-
-                <!-- Photo by <a href="https://unsplash.com/@oriento?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">五玄土 ORIENTO</a> on <a href="https://unsplash.com/photos/brown-kettle-and-white-cup-on-table-z26H7EPwARg?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
-      -->
 
                 <section id="portfolio" class="layout-section" aria-labelledby="heading-porfolio">
                     <h2 id="heading-porfolio" class="title--sm layout-section-title">Portfolio</h2>
     
                     <div class="project">
-                        <img class="project-image" src="src/assets/Teapot-and-teacup-unsplash-square.jpg" width="300" height="300" alt="Teapot and teacup"/>
+                        <img class="project-image" src="src/assets/teapot-and-teacup-square-unsplash.jpg" width="300" height="300" alt="Teapot and teacup"/>
 
                         <div>
                             <h3 class="title--normal">Teaverse app</h3>
@@ -386,14 +327,12 @@
                 </section>
 
                 <section id="experience" class="layout-section" aria-labelledby="heading-experience">
-
                     <h2 id="heading-experience" class="title--sm layout-section-title">Experience</h2>
                     
                     <div class="tags-and-pop-up">
                         <!-- id is used to add a template to the DOM via script later. -->
                         <ul id="experience-tags-list" class="tags"></ul>
                     </div>
-
                 </section>
 
                 <section id="contact-me" class="layout-section" aria-labelledby="heading-contact-me">
@@ -420,19 +359,22 @@
                         </address>
         
                         <!-- Added custom validation in JavaScript -->
-                        <form novalidate>
+                        <form netlify novalidate>
                             <div class="form-fields">
                                 <!-- Labels are visually hidden, so are explicitly created rather than implicility. -->
                                 <label for="contact-me-name" class="sr-only">Name</label>
-                                <input id="contact-me-name" class="input contact-input text--lg" type="text" placeholder="Name" autocomplete="name" minlength="2" maxlength="50" required>
+                                <input id="contact-me-name" class="input contact-input text--lg" type="text" placeholder="Name" autocomplete="name" 
+                                    name="name" minlength="2" maxlength="50" required>
                                 <div class="error-message-container"></div>
 
                                 <label for="contact-me-email" class="sr-only">Email</label>
-                                <input id="contact-me-email" class="input contact-input text--lg" type="email" placeholder="Email" autocomplete="email" minlength="5" maxlength="254" required>
+                                <input id="contact-me-email" class="input contact-input text--lg" type="email" placeholder="Email" autocomplete="email" 
+                                    name="email" minlength="5" maxlength="254" required>
                                 <div class="error-message-container"></div>
 
                                 <label for="contact-me-message" class="sr-only">Message</label>
-                                <textarea id="contact-me-message" class="input contact-input text--lg" placeholder="Message" minlength="10" maxlength="1000" required></textarea>
+                                <textarea id="contact-me-message" class="input contact-input text--lg" placeholder="Message" minlength="10" maxlength="1000" 
+                                    name="message" required></textarea>
                                 <div class="error-message-container"></div>
                             </div>
 
@@ -441,22 +383,19 @@
                                 <button class=" btn btn--raised" type="submit">Send</button>
                             </div>
                         </form>
-
                     </div>
-                    
-                </section>
-                                       
+                </section>             
             </div>
         </main>
                                    
-        <footer>
+        <footer class=" footer-wrapper">
             <div class="container">
-                <div class="footer-credits">
+                <div class="credits">
                     <div class="credits-label">
                         <small>Credits:</small>
                     </div>
     
-                    <div class="all-credits">    
+                    <div class="credits-group">    
                         <p class="credit">
                             <small> 
                                 Banner video courtesy of 
@@ -485,14 +424,13 @@
                     </div>
                 </div>
 
-                <div class="footer-copyright-media">
-    
-                    <div class="footer-logo-plus-copyright">
-                        <img src="./src/assets/MR-logo-512.png" width="50" height="50" alt="Mark Roman logo"/>
+                <div class="copyright-media">
+                    <div class="logo-plus-copyright">
+                        <img src="./src/assets/mr-logo-512.png" width="50" height="50" alt="Mark Roman logo"/>
                         
                         <div>
-                            <p class="text--bold footer-copyright-paragraph">&copy; 2025 Mark Roman</p>
-                            <p class="footer-copyright-paragraph"><small class="text--sm">All rights reserved.</small></p>
+                            <p class="text--bold copyright-paragraph">&copy; 2025 Mark Roman</p>
+                            <p class="copyright-paragraph"><small class="text--sm">All rights reserved.</small></p>
                         </div>
                     </div>
     
@@ -512,125 +450,9 @@
                                 </svg>
                             </li>
                         </ul>
-    
                     </div>
                 </div>
             </div>
         </footer>
-
-        <!-- After all DOM elements have been loaded, add experience tags and pop-ups. Avoids layout shifts as well. -->
-        <script>
-            /* Element with .tag-container class should have one of the following classes applied to it as well. */
-			const frontEndSkillClass = 'front-end';
-			const backEndSkillClass = 'back-end';
-			const versionControlWorkflowToolSkillClass = 'version-control-workflow-tools';
-			const desktopSkillClass = 'desktop';
-			const miscellaneousSkillClass = 'miscellaneous';
-			
-            /* Experience type text. Element with .experience-type-title class should have its textContent set to this. */
-			const frontEndSkillText = 'Front-end';
-			const backEndSkillText = 'Back-end';
-			const versionControlWorkflowToolSkillText = 'Version control / Workflow';
-			const desktopSkillText = 'Desktop';
-			const miscellaneousSkillText = 'Miscellaneous';
-			
-            /* Element with .progress-bar class should have one of the following classes applied to it as well. */
-			const beginnerProgressClass = 'beginner';
-			const intermediateProgressClass = 'intermediate';
-			const advancedProgressClass = 'advanced';
-			const expertProgressClass = 'expert';
-
-            /* Skill level text. Element with .skill-level-value class should have its textContent set to this. */
-			const beginnerSkillLevelText = 'Beginner';
-			const intermediateSkillLevelText = 'Intermediate';
-			const advancedSkillLevelText = 'Advanced';
-			const expertSkillLevelText = 'Expert';
-
-            function createSkill(listItemClass, progressBarClass, name, experienceType, experienceLevel, experienceDuration) {
-                return {
-                    listItemClass,    
-                    progressBarClass, 
-                
-                    name,               
-                    experienceType,     
-                    experienceLevel,    
-                    experienceDuration, 
-                };
-            };
-
-            skills = [
-                createSkill(frontEndSkillClass, advancedProgressClass, 'JavaScript', frontEndSkillText, advancedSkillLevelText, '5+ years'),
-                createSkill(frontEndSkillClass, advancedProgressClass, 'React', frontEndSkillText, advancedSkillLevelText, '4+ years'),
-                createSkill(frontEndSkillClass, advancedProgressClass, 'HTML', frontEndSkillText, advancedSkillLevelText, '5+ years'),
-                createSkill(frontEndSkillClass, advancedProgressClass, 'CSS', frontEndSkillText, advancedSkillLevelText, '5+ years'),
-                createSkill(frontEndSkillClass, advancedProgressClass, 'AG Grid', frontEndSkillText, advancedSkillLevelText, '3+ years'),
-                createSkill(frontEndSkillClass, advancedProgressClass, 'Material UI', frontEndSkillText, advancedSkillLevelText, '3+ years'),
-                createSkill(frontEndSkillClass, intermediateProgressClass, 'jQuery', frontEndSkillText, intermediateSkillLevelText, '1+ years'),
-
-                createSkill(backEndSkillClass, advancedProgressClass, 'Python', backEndSkillText, advancedSkillLevelText, '3+ years'),
-                createSkill(backEndSkillClass, intermediateProgressClass, 'NumPy', backEndSkillText, intermediateSkillLevelText, '3+ years'),
-                createSkill(backEndSkillClass, intermediateProgressClass, 'OpenPyXl', backEndSkillText, intermediateSkillLevelText, '3+ years'),
-                createSkill(backEndSkillClass, advancedProgressClass, 'Excel', backEndSkillText, advancedSkillLevelText, '16+ years'),
-
-                createSkill(versionControlWorkflowToolSkillClass, intermediateProgressClass, 'Git', versionControlWorkflowToolSkillText, intermediateSkillLevelText, '10+ years'),
-                createSkill(versionControlWorkflowToolSkillClass, intermediateProgressClass, 'GitHub', versionControlWorkflowToolSkillText, intermediateSkillLevelText, '10+ years'),
-                createSkill(versionControlWorkflowToolSkillClass, intermediateProgressClass, 'TortoiseGit', versionControlWorkflowToolSkillText, intermediateSkillLevelText, '10+ years'),
-                createSkill(versionControlWorkflowToolSkillClass, intermediateProgressClass, 'Postman', versionControlWorkflowToolSkillText, intermediateSkillLevelText, '3+ years'),
-                createSkill(versionControlWorkflowToolSkillClass, beginnerProgressClass, 'Docker', versionControlWorkflowToolSkillText, beginnerSkillLevelText, '3+ years'),
-                createSkill(versionControlWorkflowToolSkillClass, advancedProgressClass, 'Unfuddle', versionControlWorkflowToolSkillText, advancedSkillLevelText, '10+ years'),
-
-                createSkill(desktopSkillClass, advancedProgressClass, 'Delphi', desktopSkillText, advancedSkillLevelText, '16+ years'),
-                createSkill(desktopSkillClass, advancedProgressClass, 'Object Pascal', desktopSkillText, advancedSkillLevelText, '16+ years'),
-                createSkill(desktopSkillClass, advancedProgressClass, 'TMS VCL', desktopSkillText, advancedSkillLevelText, '16+ years'),
-                createSkill(desktopSkillClass, advancedProgressClass, 'SetupBuilder', desktopSkillText, advancedSkillLevelText, '16+ years'),
-
-                createSkill(miscellaneousSkillClass, intermediateProgressClass, 'Visual Studio Code', miscellaneousSkillText, intermediateSkillLevelText, '3+ years'),
-                createSkill(miscellaneousSkillClass, intermediateProgressClass, 'Webstorm', miscellaneousSkillText, intermediateSkillLevelText, '3+ years'),
-                createSkill(miscellaneousSkillClass, advancedProgressClass, 'Copilot', miscellaneousSkillText, advancedSkillLevelText, '2+ years'),
-                createSkill(miscellaneousSkillClass, intermediateProgressClass, 'Balsamiq', miscellaneousSkillText, intermediateSkillLevelText, '3+ years'),
-                createSkill(miscellaneousSkillClass, advancedProgressClass, 'JSON', miscellaneousSkillText, advancedSkillLevelText, '7+ years'),
-                createSkill(miscellaneousSkillClass, intermediateProgressClass, 'VBA', miscellaneousSkillText, intermediateSkillLevelText, '3+ years'),
-                createSkill(miscellaneousSkillClass, intermediateProgressClass, 'Java', miscellaneousSkillText, intermediateSkillLevelText, '4+ years'),
-                createSkill(miscellaneousSkillClass, advancedProgressClass, 'FileZilla', miscellaneousSkillText, advancedSkillLevelText, '16+ years'),
-            ];
-			
-			
-            /* Get reference to the experience skills template (all the experience skills tags and their pop-ups) and the <ul> they 
-               belong to. */
-            const experienceSkillsTemplate = document.getElementById('experience-skill-template');
-            const experienceTagsList = document.getElementById('experience-tags-list');
-
-            if (experienceSkillsTemplate && experienceTagsList) {
-                /* DocumentFragment is a lightweight, minimal DOM container with which we can build up a collection of DOM nodes
-                   in memory before injecting them into the DOM. This will give us a performance boost, since we won't need to
-                   repaint for each experience skill. */
-                const fragment = document.createDocumentFragment();
-
-                skills.forEach(skillObj => {
-                    /* Create the experience tag and pop-up for the skill. */
-                    const experienceSkill = experienceSkillsTemplate.content.cloneNode(true);
-
-                    /* Customize it. */
-                    experienceSkill.querySelector('.tag-contents').textContent = skillObj.name;
-                    experienceSkill.querySelector('.experience-type-title').textContent = skillObj.experienceType;
-                    experienceSkill.querySelector('.skill-level-value').textContent = skillObj.experienceLevel;
-                    experienceSkill.querySelector('.experience-level-value').textContent = skillObj.experienceDuration;
-
-                    /* Tells the tag if it should receive front-end, back-end, etc. styling. */
-                    experienceSkill.querySelector('.tag-container').classList.add(skillObj.listItemClass);
-
-                    /* Tells the progress bar if it should receive beginner, advanced, etc. styling. */
-                    experienceSkill.querySelector('.progress-bar').classList.add(skillObj.progressBarClass);
-
-                    /* Add the experience tag and pop-up to the fragment. */
-                    fragment.appendChild(experienceSkill);
-                });
-
-                /* Add all experience tags and pop-ups to the <ul> at once. */
-                experienceTagsList.appendChild(fragment); 
-            }
-        </script>
-
     </body>
-
 </html>

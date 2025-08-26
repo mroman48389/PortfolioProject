@@ -10,24 +10,24 @@
     justify-content: center;
 }
 
-.footer-copyright-media {
+.copyright-media {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.footer-copyright-paragraph {
+.copyright-paragraph {
     margin: 0;
 }
 
-.footer-logo-plus-copyright {
+.logo-plus-copyright {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     gap: 10px;
 }
 
-.footer-credits {
+.credits {
     margin-bottom: 20px;
 }
 
@@ -35,7 +35,7 @@
     margin-bottom: 10px;
 }
 
-.all-credits {
+.credits-group {
     margin-left: 50px; /* Indent under the "Credits:" label when screen is wide. */
     margin-bottom: 30px;
 }
@@ -45,13 +45,18 @@
     margin-bottom: 10px;
 }
 
+ /* So site does not end too close to the bottom of the browser. */
+ .footer-wrapper {
+    margin-bottom: 20px;
+ }
+
 @media (max-width: 37.5rem) {
-    .footer-copyright-media {
+    .copyright-media {
          flex-direction: column;
          gap: 10px;
     } 
 
-    .footer-credits {
+    .credits {
         display: grid;
         gap: 5px;
         justify-content: center;
@@ -61,9 +66,8 @@
         margin-bottom: 5px;
     }
 
-    /* Remove the ident we set, since we are now centering the footer-credits on the screen. */
-    .all-credits {
+    /* Remove the ident we set, since we are now centering the credits on the screen. */
+    .credits-group {
         margin-left: 0px;
     }
  }
- 

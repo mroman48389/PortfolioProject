@@ -12,12 +12,12 @@
     margin-bottom: 20px;
 
     border: none;
-    border-bottom: var(--gray) solid 1px;
+    border: var(--gray) solid 1px;
     transition: border-bottom 200ms;
 }
 
 .input:focus {
-    border-bottom: var(--banana-drama) solid 1px;
+    border: var(--banana-drama) solid 5px;
     outline: none;
 }
 

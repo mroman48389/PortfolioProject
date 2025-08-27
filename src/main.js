@@ -52,49 +52,50 @@ function initDarkMode() {
    we can style it differently for each case. Also need to adjust where the main element starts and
    our scroll margin tops for when the user clicks on an anchor to go to a section. */
 function initNavScroll() {
-  window.addEventListener("scroll", () => {
-      const nav = document.querySelector("nav");
-      const main = document.querySelector("main");
+  function positionNavElementsUnscrolled() {
+    const root = document.documentElement;
+    const nav = document.querySelector("nav");
+    const main = document.querySelector("main");
+    
+    if (nav && main) {
 
-      if (nav && main) {
-        const root = document.documentElement;
-        const styles = getComputedStyle(root);
-        const navHeight = parseFloat(styles.getPropertyValue("--nav-height").trim());
-        const scrollGap = parseFloat(styles.getPropertyValue("--scroll-gap").trim());
-        const darkLightModeHeight = parseFloat(styles.getPropertyValue("--dark-light-mode-height").trim());
+      const styles = getComputedStyle(root);
+      const navHeight = parseFloat(styles.getPropertyValue("--nav-height").trim());
+      const scrollGap = parseFloat(styles.getPropertyValue("--scroll-gap").trim());
+      const darkLightModeHeight = parseFloat(styles.getPropertyValue("--dark-light-mode-height").trim());
 
-        if (window.scrollY > 0) {
-          nav.classList.add("nav-scrolled");
-          main.classList.add("main-scrolled");
+      if (window.scrollY > 0) {
+        nav.classList.add("nav-scrolled");
+        main.classList.add("main-scrolled");
 
-          const scrolledPadding = parseFloat(styles.getPropertyValue("--nav-scrolled-padding-block").trim());
-          const navHeightTotal = navHeight + (scrolledPadding * 2);
-          const scrollMargin = `${navHeightTotal + scrollGap}px`;
-          root.style.setProperty("--scroll-margin-top", scrollMargin);
+        const scrolledPadding = parseFloat(styles.getPropertyValue("--nav-scrolled-padding-block").trim());
+        const navHeightTotal = navHeight + (scrolledPadding * 2);
+        const scrollMargin = `${navHeightTotal + scrollGap}px`;
+        root.style.setProperty("--scroll-margin-top", scrollMargin);
 
-          const navVerticalCenter = navHeightTotal / 2;
-          const darkLightModeVerticalCenter = navVerticalCenter - darkLightModeHeight / 2;
-          root.style.setProperty("--dark-light-mode-top", `${darkLightModeVerticalCenter}px`);
-          console.log(navVerticalCenter);
-          console.log(darkLightModeVerticalCenter);
-        } 
-        else {
-          nav.classList.remove("nav-scrolled");
-          main.classList.remove("main-scrolled");
+        const navVerticalCenter = navHeightTotal / 2;
+        const darkLightModeVerticalCenter = navVerticalCenter - darkLightModeHeight / 2;
+        root.style.setProperty("--dark-light-mode-top", `${darkLightModeVerticalCenter}px`);
+      } 
+      else {
+        nav.classList.remove("nav-scrolled");
+        main.classList.remove("main-scrolled");
 
-          const unscrolledPadding = parseFloat(styles.getPropertyValue("--nav-unscrolled-padding-block").trim());
-          const navHeightTotal = navHeight + (unscrolledPadding * 2);
-          const scrollMargin = `${navHeightTotal + scrollGap}px`;
-          root.style.setProperty("--dark-light-mode-top", scrollMargin);
+        const unscrolledPadding = parseFloat(styles.getPropertyValue("--nav-unscrolled-padding-block").trim());
+        const navHeightTotal = navHeight + (unscrolledPadding * 2);
+        const scrollMargin = `${navHeightTotal + scrollGap}px`;
+        root.style.setProperty("--dark-light-mode-top", scrollMargin);
 
-          const navVerticalCenter = navHeightTotal / 2;
-          const darkLightModeVerticalCenter = navVerticalCenter - darkLightModeHeight / 2;
-          root.style.setProperty("--dark-light-mode-top", `${darkLightModeVerticalCenter}px`);
-          console.log(navVerticalCenter);
-          console.log(darkLightModeVerticalCenter);
-        }
+        const navVerticalCenter = navHeightTotal / 2;
+        const darkLightModeVerticalCenter = navVerticalCenter - darkLightModeHeight / 2;
+        root.style.setProperty("--dark-light-mode-top", `${darkLightModeVerticalCenter}px`);
       }
-  });
+    }
+  }
+
+  window.addEventListener("scroll", positionNavElementsUnscrolled);
+  /* Need to run once on page load to give the same initial layout as when user goes back to unscrolled position. */
+  positionNavElementsUnscrolled();
 }
 
 /****************************  About me subsection fade in/outs  *********************************/

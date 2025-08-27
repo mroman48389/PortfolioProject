@@ -7,8 +7,6 @@ nav {
     position: fixed;
     top: 0; 
     left: 0;
-    /* markChange */
-    /* height: var(--nav-height);  */
     width: 100%; 
     z-index: 1000;
 
@@ -51,7 +49,6 @@ nav.nav-scrolled .nav {
 .nav-list {
     display: flex;
     list-style-type: none;
-    /* markChange */
     margin: 0px;
     gap: 10px;
 }

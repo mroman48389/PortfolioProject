@@ -85,7 +85,6 @@
     --nav-unscrolled-padding-block: 20px;
     --scroll-gap: 20px;
     --scroll-margin-top: calc(var(--nav-unscrolled-padding-block) + var(--scroll-gap));
-    /* markChange --nav-bar-height-unscrolled: 113px; */
     --email-padding-left: 5px;
 
     --dark-light-mode-height: 24px;
@@ -168,7 +167,6 @@ input, textarea, button, select {
     font: inherit;
 }
 
-/* markChange - next 2 */
 /* Offset the <main> content to prevent it from being overlapped by the fixed <nav> bar. */
 main {
     margin-top: calc(var(--nav-height) + var(--nav-unscrolled-padding-block) * 2);

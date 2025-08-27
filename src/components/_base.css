@@ -120,6 +120,18 @@ body {
     background-color: inherit;
 }
 
+/* Use for debugging to see if anything would go past the viewport on the phone. */
+/* body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 100vw;
+    width: 5px;
+    height: 100vh;
+    background: red; 
+    z-index: 9999;
+  } */
+
 html {
     color: var(--text-color);
     background-color: var(--dark-blue); /* best set on html element in case of overscroll */
@@ -134,6 +146,11 @@ html::selection {
 /* If light-theme was added via the JavaScript in main.js, switch to light mode color. */
 html.light-theme {
     background-color: var(--beige);
+}
+
+/* Prevent horizontal overflow (which happens on mobile devices). */
+html, body {
+    overflow-x: hidden;
 }
 
 input, textarea, button, select {

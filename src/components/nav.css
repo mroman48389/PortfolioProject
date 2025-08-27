@@ -28,9 +28,12 @@ nav.scrolled {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    max-width: 100%;
+
     /* Looks better with no left padding. Right padding is needed to not overlap with light/dark mode button. */ 
     padding-block: 20px;
-    padding-right: 90px;
+    padding-right: 90px; 
 
     /* Make it less jarring when we add/remove the padding on scroll changes. */
     transition: padding 0.3s ease;

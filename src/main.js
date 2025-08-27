@@ -56,7 +56,7 @@ function initNavScroll() {
     const root = document.documentElement;
     const nav = document.querySelector("nav");
     const main = document.querySelector("main");
-    
+
     if (nav && main) {
 
       const styles = getComputedStyle(root);
@@ -293,9 +293,6 @@ function initEmailRevealButton() {
       /* Add animation class here rather than in HTML to guarantee the animation plays after the element becomes visible (which we have
          done by removing .hidden). */
       emailAddressContainer.classList.add('email-fade-in'); 
-
-      console.log('Button clicked');
-      console.log(showEmailBtn.classList); // Should include "hidden"
     });
   }
 }

@@ -77,8 +77,19 @@
     --text-normal-size: 1.125rem; /* 18px / 16 */
     --text-small-size: 1rem; /* 16px / 16 */
 
-    --nav-bar-height-unscrolled: 113px;
+    /* Base height of nav with NO padding. */
+    --nav-height: 50px;
+    /* Padding of nav when user has scrolled. Multiple by 2 for top AND bottom. */
+    --nav-scrolled-padding-block: 10px;
+    /* Padding of nav when user has NOT scrolled. Multiple by 2 for top AND bottom. */
+    --nav-unscrolled-padding-block: 20px;
+    --scroll-gap: 20px;
+    --scroll-margin-top: calc(var(--nav-unscrolled-padding-block) + var(--scroll-gap));
+    /* markChange --nav-bar-height-unscrolled: 113px; */
     --email-padding-left: 5px;
+
+    --dark-light-mode-height: 24px;
+    --dark-light-mode-top: 10px;
 
     /* Paths */
 
@@ -157,11 +168,14 @@ input, textarea, button, select {
     font: inherit;
 }
 
-/* Offset the <main> content to prevent it from being overlapped by the fixed <nav> bar.
-   This margin should match the nav bar's height. Extra 100 is for some space before my name. */
+/* markChange - next 2 */
+/* Offset the <main> content to prevent it from being overlapped by the fixed <nav> bar. */
 main {
-    /* Replaced with banner margin-top: calc(var(--nav-bar-height-unscrolled) + 100px); */
-    margin-top: var(--nav-bar-height-unscrolled);
+    margin-top: calc(var(--nav-height) + var(--nav-unscrolled-padding-block) * 2);
+}
+
+main.main-scrolled {
+    margin-top: calc(var(--nav-height) + var(--nav-scrolled-padding-block) * 2);
 }
 
 @media (max-width: 37.5rem) {

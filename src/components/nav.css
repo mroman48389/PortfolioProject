@@ -7,6 +7,8 @@ nav {
     position: fixed;
     top: 0; 
     left: 0;
+    /* markChange */
+    /* height: var(--nav-height);  */
     width: 100%; 
     z-index: 1000;
 
@@ -18,7 +20,7 @@ nav {
 }
 
 /* .scrolled is added/removed by JavaScript depending on if the window is in a scrolled position. If it is, add a subtle shadow to the bottom. */
-nav.scrolled {
+nav.nav-scrolled {
     box-shadow: var(--nav-shadow-box);
 }
 
@@ -32,22 +34,25 @@ nav.scrolled {
     max-width: 100%;
 
     /* Looks better with no left padding. Right padding is needed to not overlap with light/dark mode button. */ 
-    padding-block: 20px;
+    padding-block: var(--nav-unscrolled-padding-block);
     padding-right: 90px; 
 
     /* Make it less jarring when we add/remove the padding on scroll changes. */
     transition: padding 0.3s ease;
 }
 
-/* Padding doesn't look good when the user has scrolled, so just remove it. */
-nav.scrolled .nav {
-    padding-block: 0px;
+/* Reduce padding if we scroll to hint to the user that we've fixed the nav bar and give more space for other
+   elements.  */
+nav.nav-scrolled .nav {
+    padding-block: var(--nav-scrolled-padding-block);
 }
 
 /* This styles just the list part of the nav. */
 .nav-list {
     display: flex;
     list-style-type: none;
+    /* markChange */
+    margin: 0px;
     gap: 10px;
 }
 

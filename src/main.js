@@ -1,6 +1,6 @@
 /*****************************    Light/dark mode   *********************************************/
 
-/* If the user clicks the element with id toggle-theme, add the light-theme class to html elements. 
+/* If the user clicks the element with id dark-light-mode, add the light-theme class to html elements. 
 
    Note that document.documentElement is equivalent to document.querySelector("html"), so we
    are adding light-theme to the html element and can then use html.light-theme in the CSS to
@@ -8,14 +8,29 @@
    :root.light-theme to change the color variables we defined. */
 
 function initDarkMode() {
-  const darkLightModeTooltip = document.querySelector("#toggle-theme-tooltip");
 
-  if (darkLightModeTooltip) {
-    document.querySelector("#toggle-theme").addEventListener("click", () => {
-        document.documentElement.classList.toggle("light-theme");
+  const container = document.querySelector(".dark-light-mode-container");
+  const toggleButton = document.querySelector("#dark-light-mode");
+  const tooltip = document.querySelector("#dark-light-mode-tooltip");
 
-        const isLightTheme = document.documentElement.classList.contains("light-theme");
-        darkLightModeTooltip.textContent = isLightTheme ? "Switch to dark mode" : "Switch to light mode";
+  if (container && toggleButton && tooltip) {
+    toggleButton.addEventListener("mouseenter", () => {
+      container.classList.add("show-dark-light-mode-tooltip");
+    });
+
+    toggleButton.addEventListener("mouseleave", () => {
+      container.classList.remove("show-dark-light-mode-tooltip");
+    });
+
+    toggleButton.addEventListener("click", (e) => {
+      container.classList.remove("show-dark-light-mode-tooltip");
+      /* Remove sticky focus. */
+      toggleButton.blur(); 
+        
+      document.documentElement.classList.toggle("light-theme");
+
+      const isLightTheme = document.documentElement.classList.contains("light-theme");
+      tooltip.textContent = isLightTheme ? "Switch to dark mode" : "Switch to light mode";
     });
 
     /* Also add light-theme to the html element if the user prefers it. */
@@ -23,10 +38,10 @@ function initDarkMode() {
 
     if (prefersLight) {
         document.documentElement.classList.add("light-theme");
-        darkLightModeTooltip.textContent = "Switch to dark mode";
+        tooltip.textContent = "Switch to dark mode";
     }
     else {
-        darkLightModeTooltip.textContent = "Switch to light mode";
+        tooltip.textContent = "Switch to light mode";
     }
   }
 }
@@ -34,16 +49,50 @@ function initDarkMode() {
 /*********************************   Nav bar bottom border shadow   ***************************/
 
 /* Add or remove "scrolled" class to the <nav> element depending on if the user has scrolled so 
-   we can style it differently for each case. */
+   we can style it differently for each case. Also need to adjust where the main element starts and
+   our scroll margin tops for when the user clicks on an anchor to go to a section. */
 function initNavScroll() {
   window.addEventListener("scroll", () => {
       const nav = document.querySelector("nav");
-      
-      if (window.scrollY > 0) {
-        nav.classList.add("scrolled");
-      } 
-      else {
-        nav.classList.remove("scrolled");
+      const main = document.querySelector("main");
+
+      if (nav && main) {
+        const root = document.documentElement;
+        const styles = getComputedStyle(root);
+        const navHeight = parseFloat(styles.getPropertyValue("--nav-height").trim());
+        const scrollGap = parseFloat(styles.getPropertyValue("--scroll-gap").trim());
+        const darkLightModeHeight = parseFloat(styles.getPropertyValue("--dark-light-mode-height").trim());
+
+        if (window.scrollY > 0) {
+          nav.classList.add("nav-scrolled");
+          main.classList.add("main-scrolled");
+
+          const scrolledPadding = parseFloat(styles.getPropertyValue("--nav-scrolled-padding-block").trim());
+          const navHeightTotal = navHeight + (scrolledPadding * 2);
+          const scrollMargin = `${navHeightTotal + scrollGap}px`;
+          root.style.setProperty("--scroll-margin-top", scrollMargin);
+
+          const navVerticalCenter = navHeightTotal / 2;
+          const darkLightModeVerticalCenter = navVerticalCenter - darkLightModeHeight / 2;
+          root.style.setProperty("--dark-light-mode-top", `${darkLightModeVerticalCenter}px`);
+          console.log(navVerticalCenter);
+          console.log(darkLightModeVerticalCenter);
+        } 
+        else {
+          nav.classList.remove("nav-scrolled");
+          main.classList.remove("main-scrolled");
+
+          const unscrolledPadding = parseFloat(styles.getPropertyValue("--nav-unscrolled-padding-block").trim());
+          const navHeightTotal = navHeight + (unscrolledPadding * 2);
+          const scrollMargin = `${navHeightTotal + scrollGap}px`;
+          root.style.setProperty("--dark-light-mode-top", scrollMargin);
+
+          const navVerticalCenter = navHeightTotal / 2;
+          const darkLightModeVerticalCenter = navVerticalCenter - darkLightModeHeight / 2;
+          root.style.setProperty("--dark-light-mode-top", `${darkLightModeVerticalCenter}px`);
+          console.log(navVerticalCenter);
+          console.log(darkLightModeVerticalCenter);
+        }
       }
   });
 }

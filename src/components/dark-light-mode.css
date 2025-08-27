@@ -1,4 +1,4 @@
-#toggle-theme {
+#dark-light-mode {
     /* Remove default button styles first. */
     all: unset;
     outline: revert;
@@ -7,17 +7,17 @@
     /* Fix button to upper right corner of screen. */
     position: fixed;
     right: 10px;
-    top: 10px;
+    top: var(--dark-light-mode-top);
 
     cursor: pointer;
 
     z-index: 1;
 
-    transition: translate 300ms;
+    transition: translate 300ms, top 300ms ease;
 }
 
 /* Makes the button look like it's being clicked by moving it very slightly on click. */
-#toggle-theme:active {
+#dark-light-mode:active {
     translate: 1px 1px;   
 }
 
@@ -46,11 +46,11 @@ html.light-theme .icon-moon {
     transform: translate(65px, 12px) rotate(-15.7deg) scale(1.25);
 }
 
-.toggle-theme-container {
+.dark-light-mode-container {
     position: relative;
 }
 
-.toggle-theme-tooltip {
+.dark-light-mode-tooltip {
     position: absolute;
     top: 0%;
     /* Start the tooltip to the left of its parent based (this is based on the parent's width). We want some gap between the tooltip and 
@@ -68,9 +68,13 @@ html.light-theme .icon-moon {
     /* Invisible by default. */
     opacity: 0; 
     transition: opacity 0.3s ease;
+
+    /* Make tool-tip unfocusable. */
+    pointer-events: none;
 }
 
-/* Show dark/light mode tooltip when hovering over button. */
-.toggle-theme-container:hover .toggle-theme-tooltip {
+/* Show the tooltip if dark-light-mode-tooltip is added by JavaScript (which happens on mouse enter and is removed on mouse leave/button click. 
+   This works much better for mobile than using :hover because the tool-tip can get stuck on the screen for mobile. */
+.dark-light-mode-container.show-dark-light-mode-tooltip .dark-light-mode-tooltip {
     opacity: 1;
 }

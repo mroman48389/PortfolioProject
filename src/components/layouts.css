@@ -1,5 +1,5 @@
 .layout-section {
-	scroll-margin-top: calc(var(--nav-bar-height-unscrolled) + 5px);
+	scroll-margin-top: var(--scroll-margin-top);
     padding-bottom: 150px;
 }
 

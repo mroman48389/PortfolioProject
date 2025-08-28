@@ -95,7 +95,7 @@ function initNavScroll() {
 
   window.addEventListener("scroll", positionNavElementsUnscrolled);
   /* Need to run once on page load to give the same initial layout as when user goes back to unscrolled position. */
-  positionNavElementsUnscrolled();
+  window.addEventListener("load", positionNavElementsUnscrolled);
 }
 
 /****************************  About me subsection fade in/outs  *********************************/

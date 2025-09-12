@@ -10,9 +10,9 @@
     --gray-light: #bdbdbd;
     --illicit-purple: #333333;
 
-    --sour-apple-rings: #2bbd04;
+    --deep-leaf-green: #228b04;
     --brown-yellow: #ba9807;
-    --milano-red: #ba1a0b;
+    --coral-flame-red: #e03a3e;
     --vibrant-purple: #c715d1;
     --teal: #069989;
 
@@ -29,18 +29,18 @@
 
     --mist-white: #e3f6f7;
 
-    --poppy-red: #e63946;
+    --oxide-red:  #b22234;
     --soft-alert: #f75555;
 
-    --slate-gray: #5f6368;
+    --graphite-core-gray: #484c51;
     --cool-gray: #b3b3b3;
 
     /* Component default colors. Note: Colors are expected to start with dark mode and switch to light mode. */
 
-    --exp-front-end-color: var(--sour-apple-rings);
+    --exp-front-end-color: var(--deep-leaf-green);
     --exp-back-end-color: var(--teal);
     --exp-version-control-workflow-tools-color: var(--brown-yellow);
-    --exp-desktop-color: var(--milano-red);
+    --exp-desktop-color: var(--coral-flame-red);
     --exp-miscellaneous-color: var(--vibrant-purple);
 
     --exp-front-end-glow-color: var(--becquerel);
@@ -107,15 +107,15 @@
     --anchor-color: var(--black);
     --nav-shadow-box: var(--nav-shadow-box-light-color);
 
-    --exp-front-end-glow-color: var(--sour-apple-rings);
+    --exp-front-end-glow-color: var(--deep-leaf-green);
     --exp-back-end-glow-color: var(--teal);
     --exp-version-control-workflow-tools-glow-color: var(--brown-yellow);
-    --exp-desktop-glow-color: var(--milano-red);
+    --exp-desktop-glow-color: var(--coral-flame-red);
     --exp-miscellaneous-glow-color: var(--vibrant-purple);
 
-    --error-message-color: var(--poppy-red);
+    --error-message-color: var(--oxide-red);
 
-    --disabled-color: var(--slate-gray);
+    --disabled-color: var(--graphite-core-gray);
 }
 
 * {

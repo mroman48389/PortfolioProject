@@ -32,8 +32,8 @@
     --oxide-red:  #b22234;
     --soft-alert: #f75555;
 
-    --graphite-core-gray: #484c51;
-    --cool-gray: #b3b3b3;
+    --graphite-core-gray: #484c51; /* light mode */
+    --cool-gray: #b3b3b3; /* dark mode */
 
     /* Component default colors. Note: Colors are expected to start with dark mode and switch to light mode. */
 

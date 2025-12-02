@@ -8,11 +8,12 @@
 
 ## Stack
 
-> HTML and CSS
+> JavaScript, HTML, and CSS
 
 ## Features
 
-- Uses a variety of semantic and accessible HTML elements and CSS styles. 
+- Uses a variety of semantic and accessible HTML elements and responsive CSS styles.
+- JavaScript used to initialize dark/light mode, control app bar height and animations when scrolling, set up experience tags and hovers, and manage contact form content.
 - Light and dark mode.
 - Fixed app bar with navigation.
 - Discusses my education, professional experience, values, philosophies.

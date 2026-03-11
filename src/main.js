@@ -154,28 +154,31 @@ function initExperienceTagsAndPopups() {
   /* Element with .tag-container class should have one of the following classes applied to it as well. */
   const frontEndSkillClass = 'front-end';
   const backEndSkillClass = 'back-end';
+  const testingQASkillClass = 'testing-quality-assurance'
   const versionControlWorkflowToolSkillClass = 'version-control-workflow-tools';
+  const buildDeploymentSkillClass = 'build-deployment';
   const desktopSkillClass = 'desktop';
-  const miscellaneousSkillClass = 'miscellaneous';
 
   /* Experience type text. Element with .experience-type-title class should have its textContent set to this. */
+
   const frontEndSkillText = 'Front-end';
   const backEndSkillText = 'Back-end';
-  const versionControlWorkflowToolSkillText = 'Version control / Workflow';
+  const testingQASkillText = 'Testing and Quality Assurance'
+  const versionControlWorkflowToolSkillText = 'Version Control and Workflow Tools';
+  const buildDeploymentSkillText = 'Build and Deployment';
   const desktopSkillText = 'Desktop';
-  const miscellaneousSkillText = 'Miscellaneous';
 
   /* Element with .progress-bar class should have one of the following classes applied to it as well. */
   const beginnerProgressClass = 'beginner';
   const intermediateProgressClass = 'intermediate';
   const advancedProgressClass = 'advanced';
-  const expertProgressClass = 'expert';
+  //const expertProgressClass = 'expert';
 
   /* Skill level text. Element with .skill-level-value class should have its textContent set to this. */
   const beginnerSkillLevelText = 'Beginner';
   const intermediateSkillLevelText = 'Intermediate';
   const advancedSkillLevelText = 'Advanced';
-  const expertSkillLevelText = 'Expert';
+  //const expertSkillLevelText = 'Expert';
 
   function createSkill(listItemClass, progressBarClass, name, experienceType, experienceLevel, experienceDuration) {
     return {
@@ -190,39 +193,59 @@ function initExperienceTagsAndPopups() {
   };
 
   const skills = [
+ 
     createSkill(frontEndSkillClass, advancedProgressClass, 'JavaScript', frontEndSkillText, advancedSkillLevelText, '5+ years'),
-    createSkill(frontEndSkillClass, advancedProgressClass, 'React', frontEndSkillText, advancedSkillLevelText, '4+ years'),
-    createSkill(frontEndSkillClass, advancedProgressClass, 'HTML', frontEndSkillText, advancedSkillLevelText, '5+ years'),
-    createSkill(frontEndSkillClass, advancedProgressClass, 'CSS', frontEndSkillText, advancedSkillLevelText, '5+ years'),
+    createSkill(frontEndSkillClass, intermediateProgressClass, 'TypeScript', frontEndSkillText, intermediateSkillLevelText, '1+ years'),
+    createSkill(frontEndSkillClass, advancedProgressClass, 'React', frontEndSkillText, advancedSkillLevelText, '5+ years'),
+    createSkill(frontEndSkillClass, beginnerProgressClass, 'React Router', frontEndSkillText, beginnerSkillLevelText, '1+ years'),
+    createSkill(frontEndSkillClass, intermediateProgressClass, 'Tailwind CSS', frontEndSkillText, intermediateSkillLevelText, '6+ years'),
+    createSkill(frontEndSkillClass, advancedProgressClass, 'HTML', frontEndSkillText, advancedSkillLevelText, '6+ years'),
+    createSkill(frontEndSkillClass, advancedProgressClass, 'CSS', frontEndSkillText, advancedSkillLevelText, '6+ years'),
+    createSkill(frontEndSkillClass, beginnerProgressClass, 'shadcn', frontEndSkillText, beginnerSkillLevelText, '1+ years'),    
+    createSkill(frontEndSkillClass, advancedProgressClass, 'Material UI', frontEndSkillText, advancedSkillLevelText, '4+ years'),
     createSkill(frontEndSkillClass, advancedProgressClass, 'AG Grid', frontEndSkillText, advancedSkillLevelText, '3+ years'),
-    createSkill(frontEndSkillClass, advancedProgressClass, 'Material UI', frontEndSkillText, advancedSkillLevelText, '3+ years'),
+    createSkill(frontEndSkillClass, beginnerProgressClass, 'Framer Motion', frontEndSkillText, beginnerSkillLevelText, '1+ years'), 
     createSkill(frontEndSkillClass, intermediateProgressClass, 'jQuery', frontEndSkillText, intermediateSkillLevelText, '1+ years'),
 
-    createSkill(backEndSkillClass, advancedProgressClass, 'Python', backEndSkillText, advancedSkillLevelText, '3+ years'),
+    createSkill(backEndSkillClass, advancedProgressClass, 'Python', backEndSkillText, advancedSkillLevelText, '4+ years'),
+    createSkill(backEndSkillClass, intermediateProgressClass, 'FastAPI', backEndSkillText, intermediateSkillLevelText, '4+ years'),
     createSkill(backEndSkillClass, intermediateProgressClass, 'NumPy', backEndSkillText, intermediateSkillLevelText, '3+ years'),
-    createSkill(backEndSkillClass, intermediateProgressClass, 'OpenPyXl', backEndSkillText, intermediateSkillLevelText, '3+ years'),
-    createSkill(backEndSkillClass, advancedProgressClass, 'Excel', backEndSkillText, advancedSkillLevelText, '16+ years'),
+    createSkill(backEndSkillClass, advancedProgressClass, 'OpenPyXl', backEndSkillText, advancedSkillLevelText, '3+ years'),
+    createSkill(backEndSkillClass, intermediateProgressClass, 'PostgreSQL', backEndSkillText, intermediateSkillLevelText, '1+ years'),
+    createSkill(backEndSkillClass, intermediateProgressClass, 'SQLAlchemy', backEndSkillText, intermediateSkillLevelText, '1+ years'),
+    createSkill(backEndSkillClass, intermediateProgressClass, 'Pandas', backEndSkillText, intermediateSkillLevelText, '1+ years'),
+    createSkill(backEndSkillClass, intermediateProgressClass, 'Pydantic', backEndSkillText, intermediateSkillLevelText, '1+ years'),
+    createSkill(backEndSkillClass, advancedProgressClass, 'RESTful APIs', backEndSkillText, advancedSkillLevelText, '8+ years'),
+    createSkill(backEndSkillClass, intermediateProgressClass, 'OpenAPI / Swagger', backEndSkillText, intermediateSkillLevelText, '3+ years'),
+
+    createSkill(testingQASkillClass, intermediateProgressClass, 'Jest', testingQASkillText, intermediateSkillLevelText, '1+ years'),
+    createSkill(testingQASkillClass, intermediateProgressClass, 'React Testing Library', testingQASkillText, intermediateSkillLevelText, '1+ years'),
+    createSkill(testingQASkillClass, intermediateProgressClass, 'a11y', testingQASkillText, intermediateSkillLevelText, '1+ years'),
+    createSkill(testingQASkillClass, intermediateProgressClass, 'Pytest', testingQASkillText, intermediateSkillLevelText, '1+ years'),
 
     createSkill(versionControlWorkflowToolSkillClass, intermediateProgressClass, 'Git', versionControlWorkflowToolSkillText, intermediateSkillLevelText, '10+ years'),
     createSkill(versionControlWorkflowToolSkillClass, intermediateProgressClass, 'GitHub', versionControlWorkflowToolSkillText, intermediateSkillLevelText, '10+ years'),
+    createSkill(versionControlWorkflowToolSkillClass, intermediateProgressClass, 'CI', versionControlWorkflowToolSkillText, intermediateSkillLevelText, '1+ years'),
+    createSkill(versionControlWorkflowToolSkillClass, intermediateProgressClass, 'PowerShell', versionControlWorkflowToolSkillText, intermediateSkillLevelText, '8+ years'),
     createSkill(versionControlWorkflowToolSkillClass, intermediateProgressClass, 'TortoiseGit', versionControlWorkflowToolSkillText, intermediateSkillLevelText, '10+ years'),
     createSkill(versionControlWorkflowToolSkillClass, intermediateProgressClass, 'Postman', versionControlWorkflowToolSkillText, intermediateSkillLevelText, '3+ years'),
-    createSkill(versionControlWorkflowToolSkillClass, beginnerProgressClass, 'Docker', versionControlWorkflowToolSkillText, beginnerSkillLevelText, '3+ years'),
     createSkill(versionControlWorkflowToolSkillClass, advancedProgressClass, 'Unfuddle', versionControlWorkflowToolSkillText, advancedSkillLevelText, '10+ years'),
+    createSkill(versionControlWorkflowToolSkillClass, beginnerProgressClass, 'Slack', versionControlWorkflowToolSkillText, beginnerSkillLevelText, '1+ years'),
+    createSkill(versionControlWorkflowToolSkillClass, intermediateProgressClass, 'Balsamiq', versionControlWorkflowToolSkillText, intermediateSkillLevelText, '2+ years'),
+    createSkill(versionControlWorkflowToolSkillClass, intermediateProgressClass, 'Copilot', versionControlWorkflowToolSkillText, intermediateSkillLevelText, '2+ years'),
+    createSkill(versionControlWorkflowToolSkillClass, intermediateProgressClass, 'Claude', versionControlWorkflowToolSkillText, intermediateSkillLevelText, '1+ years'),
+    createSkill(versionControlWorkflowToolSkillClass, intermediateProgressClass, 'Gemini', versionControlWorkflowToolSkillText, intermediateSkillLevelText, '1+ years'),
+
+    createSkill(buildDeploymentSkillClass, beginnerProgressClass, 'Docker', buildDeploymentSkillText, beginnerSkillLevelText, '3+ years'),
+    createSkill(buildDeploymentSkillClass, beginnerProgressClass, 'Vite', buildDeploymentSkillText, beginnerSkillLevelText, '1+ years'),
+    createSkill(buildDeploymentSkillClass, beginnerProgressClass, 'Netlify', buildDeploymentSkillText, beginnerSkillLevelText, '1+ years'),
+    createSkill(buildDeploymentSkillClass, intermediateProgressClass, 'FileZilla', buildDeploymentSkillText, intermediateSkillLevelText, '3+ years'),
+    createSkill(buildDeploymentSkillClass, intermediateProgressClass, 'SetUpBuilder', buildDeploymentSkillText, intermediateSkillLevelText, '3+ years'),
 
     createSkill(desktopSkillClass, advancedProgressClass, 'Delphi', desktopSkillText, advancedSkillLevelText, '16+ years'),
     createSkill(desktopSkillClass, advancedProgressClass, 'Object Pascal', desktopSkillText, advancedSkillLevelText, '16+ years'),
     createSkill(desktopSkillClass, advancedProgressClass, 'TMS VCL', desktopSkillText, advancedSkillLevelText, '16+ years'),
-    createSkill(desktopSkillClass, advancedProgressClass, 'SetupBuilder', desktopSkillText, advancedSkillLevelText, '16+ years'),
 
-    createSkill(miscellaneousSkillClass, intermediateProgressClass, 'Visual Studio Code', miscellaneousSkillText, intermediateSkillLevelText, '3+ years'),
-    createSkill(miscellaneousSkillClass, intermediateProgressClass, 'Webstorm', miscellaneousSkillText, intermediateSkillLevelText, '3+ years'),
-    createSkill(miscellaneousSkillClass, advancedProgressClass, 'Copilot', miscellaneousSkillText, advancedSkillLevelText, '2+ years'),
-    createSkill(miscellaneousSkillClass, intermediateProgressClass, 'Balsamiq', miscellaneousSkillText, intermediateSkillLevelText, '3+ years'),
-    createSkill(miscellaneousSkillClass, advancedProgressClass, 'JSON', miscellaneousSkillText, advancedSkillLevelText, '7+ years'),
-    createSkill(miscellaneousSkillClass, intermediateProgressClass, 'VBA', miscellaneousSkillText, intermediateSkillLevelText, '3+ years'),
-    createSkill(miscellaneousSkillClass, intermediateProgressClass, 'Java', miscellaneousSkillText, intermediateSkillLevelText, '4+ years'),
-    createSkill(miscellaneousSkillClass, advancedProgressClass, 'FileZilla', miscellaneousSkillText, advancedSkillLevelText, '16+ years'),
   ];
 
 

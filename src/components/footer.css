@@ -2,12 +2,14 @@
     display: flex;
     gap: 10px;
     list-style-type: none;
+    padding-left: 0px;
 }
 
 .footer-social {
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 30px;
 }
 
 .copyright-media {
@@ -20,7 +22,7 @@
     margin: 0;
 }
 
-.logo-plus-copyright {
+.image-plus-text {
     display: flex;
     justify-content: flex-start;
     align-items: center;

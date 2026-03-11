@@ -44,7 +44,7 @@
 }
 
 .btn--raised {
-    color: var(--black);
+    color: var(--shadow-gray);
     background-color: var(--banana-drama);
 
     padding-inline: 20px;

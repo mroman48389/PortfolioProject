@@ -34,7 +34,7 @@
             {
               "@context": "http://schema.org",
               "@type": "Person",
-              "skills": ["JavaScript", "React", "HTML", "CSS", "Python", "NumPy", "Delphi", "Object Pascal"],
+              "skills": ["JavaScript", "TypeScript", "React", "HTML", "CSS", "Python", "FastAPI", "NumPy"],
               "jobTitle": "Software Engineer",
               "name": "Mark Roman",
               "gender": "male",
@@ -115,7 +115,7 @@
                     <ul class="nav-list">
                         <li><a href="#about-me" class="btn btn--nav">About me</a></li>
                         <li><a href="#portfolio" class="btn btn--nav">Portfolio</a></li>
-                        <li><a href="#experience" class="btn btn--nav">Experience</a></li>
+                        <li><a href="#experience" class="btn btn--nav">Skills</a></li>
                         <!-- <li><a href="#testimonials" class="btn btn--nav">Testimonials</a></li> -->
                         <li><a href="#contact-me" class="btn btn--nav btn--raised">Contact me</a></li>
                     </ul>
@@ -124,7 +124,7 @@
 
             <button id="dark-light-mode" class="dark-light-mode-container" aria-label="Toggle dark theme">
                 <!-- Set the fill on the SVG to define currentColor for child elements. This allows icons to inherit theme color via CSS. -->
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 24" width="90px" height="24px" fill="var(--dark-mode-icon-color)">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 24" width="90px" height="24px" fill="var(--icon-color)">
                     <!-- Using the <g> (group element) allows us to apply transformation, styles and attributes to portions of our svg icon 
                         such as just the sun's rays, both the sun's rays and core, etc. -->
 
@@ -193,7 +193,7 @@
                             Western New England University, gaining a strong foundation in <strong>reasoning</strong>, <strong>problem solving</strong>, and 
                             <strong>abstract thinking</strong>. When I wasn't evaluating page-long integrals or 
                             writing proofs late into the night, I was studying data structures and churning out applets in my 
-                            foundational programming language, <span class="miscellaneous-text">Java</span>. I tutored and graded for 
+                            foundational programming language, Java. I tutored and graded for 
                             undergraduate mathematics courses and was involved in my school's honors and community service programs.
                         </p>
                     </div>
@@ -323,12 +323,32 @@
                         <img class="project-image" src="/assets/teapot-and-teacup-square-unsplash.jpg" width="300" height="300" alt="Teapot and teacup"/>
 
                         <div>
-                            <h3 class="title--normal">Teaverse app</h3>
+                            <h3 class="title--normal">Tea Tapestry</h3>
         
                             <p class="text">
-                                The web app for all things tea!  Learn about loose leaf tea and teaware. Discover which tea is right for you.
+                                The web app for all things tea! Learn about loose leaf tea and teaware. Discover which teas are right for you. Connect 
+                                with a worldwide community of tea drinkers.
                             </p>
-            
+
+
+
+                            <p class="text">
+                                So far, this project utilizes <span class="front-end-text">React</span>, <span class="front-end-text">TypeScript</span>, 
+                                <span class="front-end-text">Tailwind CSS</span>, <span class="front-end-text">shadcn</span>, 
+                                <span class="front-end-text">Framer Motion</span>, <span class="front-end-text">React Router</span>, and 
+                                <span class="front-end-text">Redux</span> on the frontend and <span class="back-end-text">Python</span>, 
+                                <span class="back-end-text">FastAPI</span>, <span class="back-end-text">PostgreSQL</span>, 
+                                <span class="back-end-text">SQLAlchemy</span>, and <span class="back-end-text">Pandas</span> on the backend. 
+                                Testing is done with <span class="testing-quality-assurance-text">Jest</span>, 
+                                <span class="testing-quality-assurance-text">React Testing Library</span>, and 
+                                <span class="testing-quality-assurance-text">Pytest</span>.
+                            </p>
+
+                            <p class="text">
+                                The project has not yet been deployed, but you can view the code on my 
+                                <a href="https://github.com/mroman48389" target="_blank">GitHub</a>. 
+                            </p>
+
                             <span class="btn btn--line btn--disabled">Visit (Coming Soon!)</span>
                             <!-- <a class="btn btn--line" href="https://example.com/" target="_blank">Visit</a> -->
                         </div>
@@ -337,7 +357,7 @@
                 </section>
 
                 <section id="experience" class="layout-section" aria-labelledby="heading-experience">
-                    <h2 id="heading-experience" class="title--sm layout-section-title">Experience</h2>
+                    <h2 id="heading-experience" class="title--sm layout-section-title">Skills</h2>
                     
                     <div class="tags-and-pop-up">
                         <!-- id is used to add a template to the DOM via script later. -->
@@ -352,7 +372,7 @@
                         <address>
                             <div class="contact-me-text-grid">
                                 <svg id="icon" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M15 2.5C10.1625 2.5 6.25 6.4125 6.25 11.25C6.25 17.8125 15 27.5 15 27.5C15 27.5 23.75 17.8125 23.75 11.25C23.75 6.4125 19.8375 2.5 15 2.5ZM15 14.375C13.275 14.375 11.875 12.975 11.875 11.25C11.875 9.525 13.275 8.125 15 8.125C16.725 8.125 18.125 9.525 18.125 11.25C18.125 12.975 16.725 14.375 15 14.375Z" fill="var(--dark-mode-icon-color)" />
+                                    <path d="M15 2.5C10.1625 2.5 6.25 6.4125 6.25 11.25C6.25 17.8125 15 27.5 15 27.5C15 27.5 23.75 17.8125 23.75 11.25C23.75 6.4125 19.8375 2.5 15 2.5ZM15 14.375C13.275 14.375 11.875 12.975 11.875 11.25C11.875 9.525 13.275 8.125 15 8.125C16.725 8.125 18.125 9.525 18.125 11.25C18.125 12.975 16.725 14.375 15 14.375Z" fill="var(--icon-color)" />
                                 </svg>
                                 <p id="description-lab-grid">Address:</p> 
                                 <p id="address-grid">Cheshire, CT 06410</p>
@@ -360,7 +380,7 @@
 
                             <div class="contact-me-text-grid">
                                 <svg id="icon" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M25 5H5C3.625 5 2.5125 6.125 2.5125 7.5L2.5 22.5C2.5 23.875 3.625 25 5 25H25C26.375 25 27.5 23.875 27.5 22.5V7.5C27.5 6.125 26.375 5 25 5ZM25 10L15 16.25L5 10V7.5L15 13.75L25 7.5V10Z" fill="var(--dark-mode-icon-color)" />
+                                    <path d="M25 5H5C3.625 5 2.5125 6.125 2.5125 7.5L2.5 22.5C2.5 23.875 3.625 25 5 25H25C26.375 25 27.5 23.875 27.5 22.5V7.5C27.5 6.125 26.375 5 25 5ZM25 10L15 16.25L5 10V7.5L15 13.75L25 7.5V10Z" fill="var(--icon-color)" />
                                 </svg>
                                 <p id="description-lab-grid">Email:</p>
                                 <button id="show-email-grid" class="btn btn--show-email">Show email</button>
@@ -451,7 +471,7 @@
                 </div>
 
                 <div class="copyright-media">
-                    <div class="logo-plus-copyright">
+                    <div class="image-plus-text">
                         <img src="/assets/mr-logo-512.png" width="50" height="50" alt="Mark Roman logo"/>
                         
                         <div>
@@ -461,21 +481,45 @@
                     </div>
     
                     <div class="footer-social">
-                        <p class="text--sm footer-view-me"><a href="https://www.linkedin.com/in/mark-roman-b0a2b7355" target="_blank">View me on LinkedIn</a></p>
-                        
-                        <ul class="footer-icons">
-                            <!-- <li>
-                                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M16 0C7.16344 0 0 7.16344 0 16C0 24.8366 7.16344 32 16 32C24.8366 32 32 24.8366 32 16C32 7.16344 24.8366 0 16 0ZM15.5544 13.5582L15.5208 13.0046C15.4201 11.5697 16.3042 10.259 17.7032 9.75059C18.218 9.56981 19.0909 9.54721 19.6617 9.70539C19.8856 9.77318 20.3108 9.99916 20.613 10.2025L21.1614 10.5754L21.7658 10.3833C22.1015 10.2816 22.5492 10.1121 22.7506 9.99916C22.9409 9.89747 23.1088 9.84097 23.1088 9.87487C23.1088 10.0669 22.6947 10.7223 22.3477 11.0838C21.8777 11.5923 22.012 11.6375 22.9633 11.2985C23.534 11.1064 23.5452 11.1064 23.4333 11.3211C23.3662 11.4341 23.0192 11.8295 22.6499 12.1911C22.0232 12.8125 21.9896 12.8803 21.9896 13.4001C21.9896 14.2023 21.6091 15.8745 21.2286 16.7897C20.5235 18.5071 19.0126 20.281 17.5017 21.1736C15.3753 22.4277 12.5438 22.7441 10.16 22.0097C9.36538 21.7611 8 21.1284 8 21.0154C8 20.9815 8.41409 20.9363 8.91772 20.925C9.96973 20.9024 11.0218 20.6086 11.9171 20.0889L12.5214 19.7273L11.8276 19.4901C10.8427 19.1511 9.95854 18.3715 9.73471 17.6371C9.66756 17.3998 9.68994 17.3885 10.3167 17.3885L10.9658 17.3772L10.4174 17.1173C9.76828 16.7897 9.17513 16.236 8.88414 15.6711C8.6715 15.2643 8.4029 14.2362 8.48124 14.1571C8.50362 14.1232 8.73865 14.191 9.00725 14.2814C9.77948 14.5638 9.8802 14.496 9.43253 14.0215C8.59316 13.1628 8.33575 11.886 8.73865 10.6771L8.92891 10.1347L9.66756 10.8692C11.1784 12.3493 12.9579 13.2306 14.9948 13.4905L15.5544 13.5582Z"
-                                    fill="var(--dark-mode-icon-color)" />
-                                </svg>
-                            </li> -->
+                        <div class="image-plus-text">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path 
+                                    fill-rule="evenodd" 
+                                    clip-rule="evenodd" 
+                                    d="M16 0C7.16344 0 0 7.16344 0 16C0 24.8366 7.16344 32 16 32C24.8366 32 32 24.8366 32 16C32 7.16344 24.8366 0 16 0ZM7.68101 13.252H11.307V24.1464H7.68101V13.252ZM11.5479 9.8818C11.5244 8.8136 10.7605 8 9.5201 8C8.27969 8 7.46875 8.8136 7.46875 9.8818C7.46875 10.9279 8.25572 11.7649 9.47304 11.7649H9.49621C10.7605 11.7649 11.5479 10.9279 11.5479 9.8818ZM20.2088 12.9961C22.5948 12.9961 24.3836 14.5535 24.3836 17.8998L24.3834 24.1464H20.7576V18.3178C20.7576 16.8538 20.2329 15.8548 18.9203 15.8548C17.9186 15.8548 17.3219 16.5283 17.0599 17.1788C16.964 17.4119 16.9404 17.7367 16.9404 18.0623V24.1467H13.3141C13.3141 24.1467 13.3619 14.2745 13.3141 13.2522H16.9404V14.7953C17.4217 14.0535 18.2836 12.9961 20.2088 12.9961Z" 
+                                    fill="var(--icon-color)" 
+                                />
+                            </svg>
+
+                            <p class="text--sm"><a href="https://www.linkedin.com/in/mark-roman-b0a2b7355" target="_blank">Connect on LinkedIn</a></p>
+                        </div>
+
+                        <div class="image-plus-text">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    fill-rule="evenodd"
+                                    clip-rule="evenodd"
+                                    d="M16 0C7.163 0 0 7.163 0 16C0 23.068 4.584 29.067 10.94 31C11.74 31.148 12.04 30.652 12.04 30.222C12.04 29.842 12.026 28.802 12.02 27.502C7.57 28.482 6.62 25.37 6.62 25.37C5.892 23.512 4.846 23.02 4.846 23.02C3.394 22.032 4.956 22.052 4.956 22.052C6.556 22.164 7.39 23.692 7.39 23.692C8.81 26.132 11.16 25.432 12.09 25.032C12.236 24.002 12.64 23.31 13.08 22.922C9.52 22.532 5.8 21.192 5.8 15.08C5.8 13.36 6.42 11.96 7.44 10.88C7.28 10.492 6.74 8.932 7.58 6.7C7.58 6.7 8.9 6.292 12.02 8.38C13.28 8.028 14.64 7.852 16 7.846C17.36 7.852 18.72 8.028 19.98 8.38C23.1 6.292 24.42 6.7 24.42 6.7C25.26 8.932 24.72 10.492 24.56 10.88C25.58 11.96 26.2 13.36 26.2 15.08C26.2 21.21 22.47 22.526 18.9 22.906C19.44 23.372 19.92 24.292 19.92 25.692C19.92 27.652 19.9 29.512 19.9 30.212C19.9 30.642 20.2 31.148 21.02 30.988C27.416 29.047 32 23.056 32 16C32 7.163 24.837 0 16 0Z"
+                                    fill="var(--icon-color)"
+                                />
+                            </svg>
+
+                            <p class="text--sm"><a href="https://github.com/mroman48389" target="_blank">View my projects on GitHub</a></p>
+                        </div>
+
+                        <!-- <ul class="footer-icons">
                             <li>
                                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M16 0C7.16344 0 0 7.16344 0 16C0 24.8366 7.16344 32 16 32C24.8366 32 32 24.8366 32 16C32 7.16344 24.8366 0 16 0ZM7.68101 13.252H11.307V24.1464H7.68101V13.252ZM11.5479 9.8818C11.5244 8.8136 10.7605 8 9.5201 8C8.27969 8 7.46875 8.8136 7.46875 9.8818C7.46875 10.9279 8.25572 11.7649 9.47304 11.7649H9.49621C10.7605 11.7649 11.5479 10.9279 11.5479 9.8818ZM20.2088 12.9961C22.5948 12.9961 24.3836 14.5535 24.3836 17.8998L24.3834 24.1464H20.7576V18.3178C20.7576 16.8538 20.2329 15.8548 18.9203 15.8548C17.9186 15.8548 17.3219 16.5283 17.0599 17.1788C16.964 17.4119 16.9404 17.7367 16.9404 18.0623V24.1467H13.3141C13.3141 24.1467 13.3619 14.2745 13.3141 13.2522H16.9404V14.7953C17.4217 14.0535 18.2836 12.9961 20.2088 12.9961Z" fill="var(--dark-mode-icon-color)" />
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M16 0C7.16344 0 0 7.16344 0 16C0 24.8366 7.16344 32 16 32C24.8366 32 32 24.8366 32 16C32 7.16344 24.8366 0 16 0ZM15.5544 13.5582L15.5208 13.0046C15.4201 11.5697 16.3042 10.259 17.7032 9.75059C18.218 9.56981 19.0909 9.54721 19.6617 9.70539C19.8856 9.77318 20.3108 9.99916 20.613 10.2025L21.1614 10.5754L21.7658 10.3833C22.1015 10.2816 22.5492 10.1121 22.7506 9.99916C22.9409 9.89747 23.1088 9.84097 23.1088 9.87487C23.1088 10.0669 22.6947 10.7223 22.3477 11.0838C21.8777 11.5923 22.012 11.6375 22.9633 11.2985C23.534 11.1064 23.5452 11.1064 23.4333 11.3211C23.3662 11.4341 23.0192 11.8295 22.6499 12.1911C22.0232 12.8125 21.9896 12.8803 21.9896 13.4001C21.9896 14.2023 21.6091 15.8745 21.2286 16.7897C20.5235 18.5071 19.0126 20.281 17.5017 21.1736C15.3753 22.4277 12.5438 22.7441 10.16 22.0097C9.36538 21.7611 8 21.1284 8 21.0154C8 20.9815 8.41409 20.9363 8.91772 20.925C9.96973 20.9024 11.0218 20.6086 11.9171 20.0889L12.5214 19.7273L11.8276 19.4901C10.8427 19.1511 9.95854 18.3715 9.73471 17.6371C9.66756 17.3998 9.68994 17.3885 10.3167 17.3885L10.9658 17.3772L10.4174 17.1173C9.76828 16.7897 9.17513 16.236 8.88414 15.6711C8.6715 15.2643 8.4029 14.2362 8.48124 14.1571C8.50362 14.1232 8.73865 14.191 9.00725 14.2814C9.77948 14.5638 9.8802 14.496 9.43253 14.0215C8.59316 13.1628 8.33575 11.886 8.73865 10.6771L8.92891 10.1347L9.66756 10.8692C11.1784 12.3493 12.9579 13.2306 14.9948 13.4905L15.5544 13.5582Z"
+                                    fill="var(--icon-color)" />
                                 </svg>
                             </li>
-                        </ul>
+                            <li>
+                                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M16 0C7.16344 0 0 7.16344 0 16C0 24.8366 7.16344 32 16 32C24.8366 32 32 24.8366 32 16C32 7.16344 24.8366 0 16 0ZM7.68101 13.252H11.307V24.1464H7.68101V13.252ZM11.5479 9.8818C11.5244 8.8136 10.7605 8 9.5201 8C8.27969 8 7.46875 8.8136 7.46875 9.8818C7.46875 10.9279 8.25572 11.7649 9.47304 11.7649H9.49621C10.7605 11.7649 11.5479 10.9279 11.5479 9.8818ZM20.2088 12.9961C22.5948 12.9961 24.3836 14.5535 24.3836 17.8998L24.3834 24.1464H20.7576V18.3178C20.7576 16.8538 20.2329 15.8548 18.9203 15.8548C17.9186 15.8548 17.3219 16.5283 17.0599 17.1788C16.964 17.4119 16.9404 17.7367 16.9404 18.0623V24.1467H13.3141C13.3141 24.1467 13.3619 14.2745 13.3141 13.2522H16.9404V14.7953C17.4217 14.0535 18.2836 12.9961 20.2088 12.9961Z" fill="var(--icon-color)" />
+                                </svg>
+                            </li>
+                        </ul> -->
                     </div>
                 </div>
             </div>

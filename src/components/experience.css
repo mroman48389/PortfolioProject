@@ -197,6 +197,16 @@
     --experience-type-glow-color: var(--exp-back-end-glow-color);
 }
 
+.testing-quality-assurance {
+    --experience-type-color: var(--exp-testing-quality-assurance-color);
+    --experience-type-glow-color: var(--exp-testing-quality-assurance-glow-color);
+}
+
+.build-deployment {
+    --experience-type-color: var(--exp-build-deployment-color);
+    --experience-type-glow-color: var(--exp-build-deployment-glow-color);
+}
+
 .version-control-workflow-tools {
     --experience-type-color: var(--exp-version-control-workflow-tools-color);
     --experience-type-glow-color: var(--exp-version-control-workflow-tools-glow-color);
@@ -205,11 +215,6 @@
 .desktop {
     --experience-type-color: var(--exp-desktop-color);
     --experience-type-glow-color: var(--exp-desktop-glow-color);
-}
-
-.miscellaneous {
-    --experience-type-color: var(--exp-miscellaneous-color);
-    --experience-type-glow-color: var(--exp-miscellaneous-glow-color);
 }
 
 .experience-type-title {

@@ -12,7 +12,7 @@
     margin-bottom: 20px;
 
     border: none;
-    border: var(--gray) solid 1px;
+    border: var(--slate-mist) solid 1px;
     transition: border-bottom 200ms;
 }
 

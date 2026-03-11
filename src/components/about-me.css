@@ -8,18 +8,23 @@
     font-weight: bold;
 }
 
+.testing-quality-assurance-text {
+    color: var(--exp-testing-quality-assurance-color);
+    font-weight: bold;
+}
+
 .version-control-workflow-tools-text {
     color: var(--exp-version-control-workflow-tools-color);
     font-weight: bold;
 }
 
-.desktop-text {
-    color: var(--exp-desktop-color);
+.build-deployment {
+    color: var(--exp-build-deployment-color);
     font-weight: bold;
 }
 
-.miscellaneous-text {
-    color: var(--exp-miscellaneous-color);
+.desktop-text {
+    color: var(--exp-desktop-color);
     font-weight: bold;
 }
 

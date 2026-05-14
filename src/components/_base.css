@@ -43,6 +43,10 @@
     --ice-climber: #20e6d2; 
     --clematis-magenta: #e555f0;
 
+    /* Tea Tapestry colors */
+    --sencha-green: #9dcf60;
+    --tea-tapestry-bg: var(--sencha-green);
+
     /* Element-specific colors 
     
        NOTE: The following colors are designed to work in Dark Mode. If the colors need to

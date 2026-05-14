@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 150">
+  <defs>
+    <style>
+      .tea {
+        font-family: Georgia, 'Times New Roman', serif;
+        font-size: 70px;
+        font-weight: 400;
+        fill: #3e241d;
+        letter-spacing: 11px;
+      }
+      .tapestry {
+        font-family: Georgia, 'Times New Roman', serif;
+        font-size: 40px;
+        font-weight: 400;
+        fill: #3e241d;
+        letter-spacing: 7px;
+      }
+      
+      .weave-line {
+        stroke: #3e241d;
+        stroke-width: 1.5;
+        fill: none;
+        opacity: 0.4;
+      }
+      
+      .leaf {
+        fill: #3e241d;
+        opacity: 0.5;
+      }
+    </style>
+  </defs>
+  
+  <path class="weave-line" d="M 65 75 Q 100 65, 135 75 Q 170 85, 205 75 Q 240 65, 275 75 Q 310 85, 340 75" />
+  <path class="weave-line" d="M 65 80 Q 100 90, 135 80 Q 170 70, 205 80 Q 240 90, 275 80 Q 310 70, 340 80" />
+  <path class="leaf" d="M 65 75 Q 60 74, 55 72 Q 52 69, 54 66 Q 57 64, 60 66 Q 63 68, 65 71 Z" />
+  <path class="leaf" d="M 340 80 Q 345 79, 350 77 Q 353 74, 351 71 Q 348 69, 345 71 Q 342 73, 340 76 Z" />
+  <text x="200" y="65" text-anchor="middle" class="tea">TEA</text>
+  <text x="200" y="115" text-anchor="middle" class="tapestry">TAPESTRY</text>
+</svg>

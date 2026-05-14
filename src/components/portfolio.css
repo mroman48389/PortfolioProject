@@ -15,6 +15,65 @@
        175px instead, and if it would be larger than that, make it 300px. */
     width: clamp(175px, 20vw, 300px);
     height: clamp(175px, 20vw, 300px);
+
+    cursor: pointer;
+
+    /* Smooth pulse */
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    
+    /* Default state: subtle shadow */
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
+}
+
+.project-image:hover {
+    /* On hover, slightly increase size of image for effect. */
+    transform: scale(1.04); 
+    
+    /* Set slow pulse animation for the shadow portion. forwards
+       makes sure the animation finishes when the user stops 
+       hovering so the change is not abrupt. */
+    animation: pulseGlow 2.4s ease-in-out infinite forwards;
+}
+
+/* Pulse animation */
+@keyframes pulseGlow {
+    0% {
+        box-shadow:
+            0 0 22px rgba(255, 210, 140, 0.65),
+            0 0 38px rgba(255, 180, 90, 0.45);
+    }
+    50% {
+        box-shadow:
+            0 0 32px rgba(255, 225, 160, 0.85),
+            0 0 55px rgba(255, 200, 120, 0.55);
+    }
+    100% {
+        box-shadow:
+            0 0 22px rgba(255, 210, 140, 0.65),
+            0 0 38px rgba(255, 180, 90, 0.45);
+    }
+}
+
+.project-link {
+    /* Ensures the clickable area matches the circle. */ 
+    border-radius: 50%;    
+
+    /* In _defaults.css, we change these for all anchors. In this case,
+       we don't want the change. Same on the hover. */
+    opacity: 1;
+    transition: none;
+}
+
+.project-link:hover {
+    opacity: 1; /* See note above. */
+}
+
+.tea-tapestry-bg {
+    background-color: var(--tea-tapestry-bg);
+}
+
+.visit-link {
+    padding-left: 0;
 }
 
 /* Target odd-numbered sibling elements with class .project (e.g., 1st, 3rd).

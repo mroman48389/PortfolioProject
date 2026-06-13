@@ -230,12 +230,13 @@ function initExperienceTagsAndPopups() {
 
     createSkill(testingQASkillClass, intermediateProgressClass, 'Jest', testingQASkillText, intermediateSkillLevelText, '1+ years'),
     createSkill(testingQASkillClass, intermediateProgressClass, 'React Testing Library', testingQASkillText, intermediateSkillLevelText, '1+ years'),
+    createSkill(testingQASkillClass, intermediateProgressClass, 'Playwright', testingQASkillText, intermediateSkillLevelText, '1+ years'),
     createSkill(testingQASkillClass, intermediateProgressClass, 'a11y', testingQASkillText, intermediateSkillLevelText, '1+ years'),
     createSkill(testingQASkillClass, intermediateProgressClass, 'Pytest', testingQASkillText, intermediateSkillLevelText, '1+ years'),
 
     createSkill(versionControlWorkflowToolSkillClass, intermediateProgressClass, 'Git', versionControlWorkflowToolSkillText, intermediateSkillLevelText, '10+ years'),
     createSkill(versionControlWorkflowToolSkillClass, intermediateProgressClass, 'GitHub', versionControlWorkflowToolSkillText, intermediateSkillLevelText, '10+ years'),
-    createSkill(versionControlWorkflowToolSkillClass, intermediateProgressClass, 'CI', versionControlWorkflowToolSkillText, intermediateSkillLevelText, '1+ years'),
+    createSkill(versionControlWorkflowToolSkillClass, intermediateProgressClass, 'CI/CD', versionControlWorkflowToolSkillText, intermediateSkillLevelText, '1+ years'),
     createSkill(versionControlWorkflowToolSkillClass, intermediateProgressClass, 'PowerShell', versionControlWorkflowToolSkillText, intermediateSkillLevelText, '8+ years'),
     createSkill(versionControlWorkflowToolSkillClass, intermediateProgressClass, 'TortoiseGit', versionControlWorkflowToolSkillText, intermediateSkillLevelText, '10+ years'),
     createSkill(versionControlWorkflowToolSkillClass, intermediateProgressClass, 'Postman', versionControlWorkflowToolSkillText, intermediateSkillLevelText, '3+ years'),
